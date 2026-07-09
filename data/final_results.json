@@ -1,0 +1,2535 @@
+[
+  {
+    "id": 1,
+    "name": "Salesforce",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Salesforce is a cloud-based software company that specializes in customer relationship management (CRM). Its core offering helps businesses manage customer interactions, sales processes, marketing campaigns, and customer service.",
+      "auth_methods": "Salesforce supports OAuth 2.0 for API authentication, which is the most common and secure method. It also supports traditional username and password authentication, often with additional security measures like multi-factor authentication. SAML is also supported for single sign-on (SSO).",
+      "self_serve_vs_gated": "Salesforce offers a free Developer Edition account, which provides access to the platform for testing and development purposes without cost. Paid plans are required for production use and advanced features, with API access often being an add-on cost on lower tiers. Some API access is gated and may require a paid plan or sales consultation.",
+      "api_surface": "Salesforce provides a comprehensive API surface, including a well-documented REST API and a GraphQL API. It also supports the Model Context Protocol (MCP) through Salesforce Hosted MCP Servers, enabling AI agents to interact with Salesforce data and logic.",
+      "buildability_verdict": "Yes, Salesforce could be an agent toolkit today. Its robust API surface (REST, GraphQL) and support for the Model Context Protocol (MCP) allow for integration with AI agents. The main blocker, if any, would be the potential cost associated with extensive API usage on paid plans, as API access can be an add-on cost.",
+      "evidence_urls": "https://www.salesforce.com/, https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_salesforce_rest_api.htm, https://developer.salesforce.com/docs/atlas.en-us.api_graphql.meta/api_graphql/graphql_overview.htm, https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_authentication.htm, https://www.salesforce.com/products/sales-cloud/pricing/, https://developer.salesforce.com/signup, https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_salesforce_rest_api.htm, https://developer.salesforce.com/docs/atlas.en-us.api_graphql.meta/api_graphql/graphql_overview.htm, https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_authentication.htm, https://www.salesforce.com/products/sales-cloud/pricing/, https://developer.salesforce.com/signup, https://developer.salesforce.com/docs/atlas.en-us.mc_scp_hosted_mcp_servers.meta/mc_scp_hosted_mcp_servers/mc_scp_hosted_mcp_servers_get_started.htm"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'try for free' | Also: 'contact us'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (Bearer)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/salesforce.local/einstein/2.0.1/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 2,
+    "name": "HubSpot",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "HubSpot is a customer relationship management (CRM) platform that offers a suite of tools for marketing, sales, service, and content management, designed to help businesses grow.",
+      "auth_methods": "HubSpot's APIs support OAuth 2.0 for multi-account integrations and private app access tokens for single-account setups. API Keys have been retired and are no longer supported for new integrations.",
+      "self_serve_vs_gated": "HubSpot offers a free CRM with basic features, and various paid plans (Starter, Professional, Enterprise) for its different 'Hubs' (Marketing, Sales, Service, Content, Data, Revenue). API access and features are generally tied to these plans, with higher tiers offering more advanced capabilities. Developers can create private apps for free, which provide API access for a single account. For broader distribution or more advanced features, paid plans or specific agreements may be required.",
+      "api_surface": "HubSpot provides a well-documented REST API. They also have an API reference documentation that is versioned. There is no readily available information indicating the presence of an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, HubSpot could be an agent toolkit today. Its comprehensive REST API, extensive documentation, and various authentication methods make it suitable for integration. The main blocker, if any, would be understanding the specific API rate limits and tier-based access to certain APIs, which would require careful planning for robust agent functionality.",
+      "evidence_urls": "https://www.hubspot.com/products, https://developers.hubspot.com/docs/api/overview, https://developers.hubspot.com/docs/api/authentication, https://www.hubspot.com/pricing/marketing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "OAuth2": "If you plan to distribute your app to multiple accounts (either through listing on the HubSpot Marketplace or by managing specific authorized accounts), your app must be built using OAuth authentication. ... This access token is provided using the `Bearer` HTTP authorization header.",
+      "API_Key": "Some app features and settings require a developer API key, which is available in the developer overview of your HubSpot account.If a feature or endpoint requires a developer API key, it\u2019ll be documented in the associated guide or reference article. You\u2019ll provide the key value in the `hapikey` query parameter, usually with the `appId` query parameter which corresponds to the app you\u2019re making changes to.",
+      "Basic": "Not explicitly mentioned in the text."
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "dom_confidence": "high (Agentic RAG)"
+  },
+  {
+    "id": 3,
+    "name": "Pipedrive",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Pipedrive is a Customer Relationship Management (CRM) platform designed to help sales teams manage deals, customer relationships, and sales pipelines more effectively. It offers tools for organizing products, supply chains, and sales data in one system to simplify operations and speed up decision-making.",
+      "auth_methods": "Pipedrive supports API Key authentication and OAuth 2.0 for API access.",
+      "self_serve_vs_gated": "Pipedrive offers a free trial (typically 14 or 30 days) for its services, allowing developers to get credentials and test the API during this period. API access is generally included with paid plans, meaning it's not gated behind a separate sales call or partner agreement for basic usage.",
+      "api_surface": "Pipedrive provides a documented RESTful API. There is no mention of an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, Pipedrive could be an agent toolkit today. The main blocker would be the need to manage API rate limits, which vary by subscription plan, and to ensure secure handling of API keys or OAuth tokens.",
+      "evidence_urls": "https://developers.pipedrive.com/, https://www.pipedrive.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "API_Key": "The API token can be [obtained](https://pipedrive.readme.io/docs/how-to-find-the-api-token) manually from the Pipedrive app."
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.pipedrive.com/docs/api/v1",
+    "dom_confidence": "high (Agentic RAG)"
+  },
+  {
+    "id": 4,
+    "name": "Attio",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Attio is a flexible, object-based CRM designed for modern go-to-market teams, allowing users to model their workflows from scratch with AI-driven data enrichment and automation.",
+      "auth_methods": "Attio supports OAuth 2.0 for third-party integrations and API key (access tokens) for direct API access. Basic Authentication is also supported, using the token as the username with a blank password, though Bearer authentication is recommended.",
+      "self_serve_vs_gated": "Attio offers a free plan for up to 3 users, with paid plans starting at $29/user/month (billed annually). API and webhook access are available on all plans, including the free tier.",
+      "api_surface": "Attio provides a documented REST API for reading and writing CRM data programmatically. It also offers an official hosted Model Context Protocol (MCP) server, enabling AI assistants to interact with the Attio workspace.",
+      "buildability_verdict": "Yes, Attio could be an agent toolkit today. Its documented REST API and MCP server provide a solid foundation for building agent integrations. The main blocker, if any, would be the complexity of integrating with a highly customizable object-based data model, which might require a deeper understanding of Attio's structure for advanced use cases.",
+      "evidence_urls": "https://attio.com/pricing, https://developers.attio.com/docs, https://mcp.attio.com/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'talk to sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.attio.com/docs",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 5,
+    "name": "Twenty",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "CRM (Customer Relationship Management) - A modern, open-source CRM offering flexibility, advanced features, and a sleek design, aimed at being enjoyable to use, easily extendable, and perfectly in sync with user data.",
+      "auth_methods": "API Key and OAuth 2.0 (Authorization Code flow with PKCE, and Client Credentials flow for server-to-server access).",
+      "self_serve_vs_gated": "Self-serve. A free trial is available for the cloud version, and the software can be self-hosted for free. Paid plans start at $9/user/month.",
+      "api_surface": "Documented REST and GraphQL APIs are available. A Model Context Protocol (MCP) server exists for integration with AI assistants.",
+      "buildability_verdict": "Yes, Twenty could be an agent toolkit today. The main blocker is not a technical limitation of Twenty's API, but rather the inherent complexities and potential latency introduced by the Model Context Protocol (MCP) standard itself, which can make it unsuitable for real-time applications.",
+      "evidence_urls": "https://twenty.com/, https://twenty.com/pricing, https://docs.twenty.com/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'talk to us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.twenty.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 6,
+    "name": "Podio",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Podio is a work management and collaboration platform that allows teams to build custom applications and workflows to organize and manage their projects, client relationships, and daily tasks.",
+      "auth_methods": "OAuth2 (including server-side flow, client-side flow, username & password flow, and app authentication flow), API Key.",
+      "self_serve_vs_gated": "Podio offers a free plan with limitations on users and items. Paid plans are available for more extensive features and capacity. Developers can obtain API keys and get started with the API on the free tier, but advanced features or higher usage limits may require a paid plan or contacting sales.",
+      "api_surface": "Podio offers a documented REST API. It also has an existing Model Context Protocol (MCP) server available at https://mcp.podio.com, which connects AI assistants directly to Podio data.",
+      "buildability_verdict": "Yes, Podio could be an agent toolkit today. The main enabler is the existing Model Context Protocol (MCP) server, which allows AI assistants to interact with Podio data using natural language. The REST API provides further programmatic access for more complex integrations.",
+      "evidence_urls": "https://podio.com/site/pricing, https://developers.podio.com/authentication, https://developers.podio.com/api, https://mcp.podio.com/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'sign up'",
+    "dom_auth": {
+      "OAuth2": "oauth2",
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.podio.com/authentication",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 7,
+    "name": "Zoho CRM",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Zoho CRM is a cloud-based customer relationship management (CRM) software that helps businesses manage sales, marketing, and customer support.",
+      "auth_methods": "OAuth2",
+      "self_serve_vs_gated": "Self-serve with a free tier and free trial for paid plans. Developers can access documentation and begin integration without a sales call.",
+      "api_surface": "Primarily REST API, with support for Bulk API, Notification APIs, Query APIs (COQL), and GraphQL APIs. An MCP server exists for agentic automation.",
+      "buildability_verdict": "Yes, Zoho CRM can be an agent toolkit today. Its robust REST API, extensive documentation, and support for various integration methods make it suitable for agentic automation.",
+      "evidence_urls": "https://www.zoho.com/crm/developer/docs/api/v2/, https://www.zoho.com/crm/developer/docs/api/v2/modules-api.html, https://www.zoho.com/crm/developer/docs/api/v2/COQL-Overview.html, https://www.zoho.com/crm/developer/docs/api/v2/GraphQL-APIs.html, https://www.zoho.com/crm/developer/docs/api/v2/Bulk-API.html, https://www.zoho.com/crm/developer/docs/api/v2/Notification-APIs.html, https://www.zoho.com/crm/developer/docs/api/v2/MCP-for-Zoho-CRM.html, https://www.zoho.com/crm/help/api/authentication.html, https://www.zoho.com/crm/help/api/oauth-2-0.html, https://www.zoho.com/crm/help/api/v8/api-directory.html, https://www.zoho.com/crm/help/api/v8/connected-workflow-apis.html, https://www.zoho.com/crm/help/api/v8/zia-assistant-api.html, https://www.zoho.com/crm/help/api/v8/workflow-apis.html, https://www.zoho.com/crm/help/api/v8/actions-apis.html, https://www.zoho.com/crm/help/api/v8/field-updates-apis.html, https://www.zoho.com/crm/help/api/v8/email-actions-apis.html, https://www.zoho.com/crm/help/api/v8/automation-task-actions-apis.html, https://www.zoho.com/crm/help/api/v8/webhook-actions-apis.html, https://www.zoho.com/crm/help/api/v8/data-sharing-rules-api.html, https://www.zoho.com/crm/help/api/v8/calls-preferences-api.html, https://www.zoho.com/crm/help/api/v8/get-rich-text-fields-api.html, https://www.zoho.com/crm/help/api/v8/records-clone-api.html, https://www.zoho.com/crm/help/api/v8/export-audit-log-api.html, https://www.zoho.com/crm/help/api/v8/list-available-apis.html, https://www.zoho.com/crm/help/api/v8/duplicate-check-option-api.html, https://www.zoho.com/crm/help/api/v8/picklist-values-api.html, https://www.zoho.com/crm/help/api/v8/mass-delete-tags-api.html, https://www.zoho.com/crm/help/api/v8/data-enrichment-api.html, https://www.zoho.com/crm/help/api/v8/cadence-api.html, https://www.zoho.com/crm/help/api/v8/assignment-threshold-apis.html, https://www.zoho.com/crm/help/api/v8/link-and-unlink-deals-apis.html, https://www.zoho.com/crm/help/api/v8/recycle-bin-apis.html, https://www.zoho.com/crm/help/api/v8/open-api-3-0-0-specification.html, https://www.zoho.com/crm/help/api/v8/support-access.html, https://www.zoho.com/crm/help/api/v8/developer-console.html, https://www.zoho.com/crm/help/api/v8/add-developers.html, https://www.zoho.com/crm/help/api/v8/self-client.html, https://www.zoho.com/crm/help/api/v8/server-based-client.html, https://www.zoho.com/crm/help/api/v8/authorization-request.html, https://www.zoho.com/crm/help/api/v8/using-authentication-token.html, https://www.zoho.com/crm/help/api/v8/oauth-2-0-authentication.html, https://www.zoho.com/crm/help/api/v8/api-integration.html, https://www.zoho.com/crm/help/api/v8/api-directory.html, https://www.zoho.com/crm/help/api/v8/developer-tools-and-api.html, https://www.zoho.com/crm/help/api/v8/pricing.html"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Gated",
+    "dom_self_serve_evidence": "Signal: 'contact us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://www.zoho.com/crm/developer/docs/api/v2/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 8,
+    "name": "Close",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Close is a CRM (Customer Relationship Management) software designed for sales teams, focusing on improving communication efficiency and automating sales processes to help businesses convert leads into revenue.",
+      "auth_methods": "The Close API supports two authentication methods: API Keys (using HTTP Basic Authentication) and OAuth 2.0.",
+      "self_serve_vs_gated": "Close offers a free trial for evaluating the platform. Paid plans start at $9 per month. Developers can access API documentation and potentially generate API keys for integration, suggesting a degree of self-serve access for development. However, for public applications or more complex integrations, an OAuth 2.0 flow is recommended, which may involve app registration.",
+      "api_surface": "Close offers a documented RESTful API with a comprehensive set of endpoints for managing leads, contacts, activities, and more. They also mention a Model Context Protocol (MCP) server, which may be preferred for AI agent integrations.",
+      "buildability_verdict": "Yes, Close could be an agent toolkit today. The main blocker, if any, would be the need to understand and implement the specific API endpoints and authentication methods for the desired agent functionality, as well as potential rate limits. The availability of an MCP server specifically for AI agents is a strong positive indicator.",
+      "evidence_urls": "https://developer.close.com/api/, https://www.close.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'talk to sales'",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0",
+      "API_Key": "api key",
+      "Basic": "basic auth"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.close.com/api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 9,
+    "name": "Copper",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "CRM - Customer Relationship Management software designed to integrate seamlessly with Google Workspace.",
+      "auth_methods": "OAuth 2.0, API Key",
+      "self_serve_vs_gated": "Paid plans required; no free tier, but offers a free trial.",
+      "api_surface": "REST API. Supports various resources including People, Leads, Opportunities, Companies, and Activities. Webhooks are supported. No mention of GraphQL API or MCP server.",
+      "buildability_verdict": "Yes, the API is well-documented and supports RESTful interactions, making it suitable for agent toolkit integration. No major blockers identified.",
+      "evidence_urls": "https://developer.copper.com/, https://www.copper.com/pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'no credit card'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.copper.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 10,
+    "name": "DealCloud",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "DealCloud is a CRM, deal sourcing, and fund management platform for the capital markets, designed to streamline operations, enhance deal flow, and improve fund management efficiency for financial services firms.",
+      "auth_methods": "OAuth2 Client Credentials flow is used to generate a bearer token for API requests. API keys and client secrets are also utilized for authentication.",
+      "self_serve_vs_gated": "DealCloud does not offer a free trial or free version. Pricing is available upon request, and typically requires a paid plan and a sales consultation.",
+      "api_surface": "DealCloud offers a documented REST API. There is no mention of a GraphQL API or an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, DealCloud could be an agent toolkit today. The main blocker is the gated nature of API access, which requires a paid plan and sales engagement, preventing immediate self-serve access for developers.",
+      "evidence_urls": "https://dealcloud.com/, https://www.dealcloud.com/api-docs/, https://www.dealcloud.com/pricing/, https://www.capterra.com/p/170070/DealCloud/, https://www.g2.com/products/dealcloud/pricing, https://www.rings.ai/intapp-dealcloud-review/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'get started'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://www.dealcloud.com/api-docs/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 11,
+    "name": "Zendesk",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Zendesk is a customer service and engagement platform that provides a suite of tools for managing customer interactions, including ticketing, live chat, and self-service options. It aims to improve customer satisfaction and streamline support operations.",
+      "auth_methods": "Zendesk supports API Token authentication, OAuth 2.0 access tokens, and Basic authentication (email/password, though this is deprecated).",
+      "self_serve_vs_gated": "Developers can obtain credentials for free/trial accounts. Zendesk offers a free 14-day trial for its platform, allowing developers to test and build integrations. For partner programs or extended development, sponsored accounts are also available.",
+      "api_surface": "Zendesk offers a comprehensive REST API for most of its functionalities. It also has a GraphQL API for its Search and Conversations APIs. Zendesk has adopted the Model Context Protocol (MCP) and offers both MCP Client and Server capabilities.",
+      "buildability_verdict": "Yes, Zendesk could be an agent toolkit today. Zendesk has introduced 'Custom Agents' and an 'Agent Builder' which allow for the creation of reusable AI components that can automate complex tasks and interact with external systems. The adoption of MCP further enhances its capabilities for AI-driven workflows and integrations.",
+      "evidence_urls": "https://developer.zendesk.com/api-reference/, https://www.zendesk.com/pricing/, https://developer.zendesk.com/documentation/api-references/ (for API surface), https://developer.zendesk.com/documentation/api-references/security-and-authentication/ (for auth methods), https://www.zendesk.com/trial/ (for self-serve/trial), https://developer.zendesk.com/documentation/model-context-protocol/ (for MCP), https://developer.zendesk.com/documentation/api-references/ai-agents/ (for agent toolkit capabilities)"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.zendesk.com/api-reference/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 12,
+    "name": "Intercom",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer communication and engagement platform that offers live chat, email campaigns, chatbots, and a shared inbox to centralize customer interactions from initial contact to ongoing support.",
+      "auth_methods": "OAuth 2.0 and API Keys (Access Tokens). OAuth 2.0 is used for public apps accessing other users' data, while API Keys are for private apps accessing data within your own workspace.",
+      "self_serve_vs_gated": "Developers can create a free developer workspace for development purposes. However, full functionality and production use require paid plans, with pricing starting at $29/seat/month (annual billing) for the Essential plan.",
+      "api_surface": "A documented REST API is available, with an OpenAPI specification provided. Intercom also hosts a remote Model Context Protocol (MCP) server for AI tools to access Intercom data.",
+      "buildability_verdict": "Yes, Intercom could be an agent toolkit today. It has a well-documented REST API and a Model Context Protocol (MCP) server that allows AI tools to access Intercom data. The main blocker would be the need to navigate their pricing structure and potentially integrate with their specific authentication flows for different app types (public vs. private).",
+      "evidence_urls": "https://www.intercom.com/pricing, https://developers.intercom.com/, https://developers.intercom.com/intercom-api-reference/reference, https://developers.intercom.com/model-context-protocol/overview, https://developers.intercom.com/authentication/overview"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.intercom.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 13,
+    "name": "Freshdesk",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Freshdesk is a cloud-based customer support software that offers a suite of features including ticketing, automation, and a self-service portal to manage customer interactions across multiple channels like email, phone, chat, and social media.",
+      "auth_methods": "Freshdesk uses Basic Access Authorization, allowing authentication via username/password or an API key. For API key authentication, a dummy password can be used. It also supports OAuth 2.0 and Bearer Token authentication for API actions within its AI Agent Studio.",
+      "self_serve_vs_gated": "Freshdesk offers a free plan for up to 2 agents for 6 months, which is suitable for small teams and startups. Paid plans (Growth, Pro, Enterprise) are required for more advanced features and higher agent limits. A 14-day free trial of the Enterprise plan is available with no credit card required.",
+      "api_surface": "Freshdesk provides a documented REST API (v2.0) that allows for CRUD operations on helpdesk data. It does not appear to have a documented GraphQL API or an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Freshdesk could be an agent toolkit today. The main blocker is that while it has a robust REST API, it lacks a GraphQL API and an MCP server, which might be preferred for certain modern integration patterns. Additionally, the API's Basic Auth method, while functional, requires careful management of credentials due to its broad scope.",
+      "evidence_urls": "https://freshdesk.com/pricing, https://developers.freshdesk.com/api/"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'free trial'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.freshdesk.com/api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 14,
+    "name": "Front",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer communication platform - Consolidates customer interactions from various channels into a shared inbox, enabling collaboration and automation.",
+      "auth_methods": "OAuth2, API Tokens",
+      "self_serve_vs_gated": "Free trial available; paid plans required for full functionality. Developer accounts offer a free sandbox environment.",
+      "api_surface": "REST API (Core API, Channels API, etc.), Plugin SDK, Connectors, Chat Widget. MCP server exists for AI agents.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The Core API provides comprehensive control over entities, and the MCP server allows AI agents to interact with conversations.",
+      "evidence_urls": "https://dev.front.app/docs/api/core/overview, https://dev.front.app/docs/api/core/authentication, https://dev.front.app/docs/api/core/introduction, https://dev.front.app/docs/api/platform/overview, https://front.app/pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'talk to sales'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (ApiKey)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/amazonaws.com/cloudfront/2016-11-25/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 15,
+    "name": "Pylon",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer support and operations platform that unifies communication channels and automates workflows.",
+      "auth_methods": "Bearer Token (OAuth2 implied)",
+      "self_serve_vs_gated": "Free trial available, but paid plans and sales consultation are likely required for full API access and enterprise features.",
+      "api_surface": "REST API. Broad surface area including accounts, contacts, issues, knowledge base, and more. MCP server is not explicitly mentioned.",
+      "buildability_verdict": "Yes, the API is well-documented and appears to support the necessary operations for an agent toolkit.",
+      "evidence_urls": "https://www.usepylon.com/security.pdf, https://api.usepylon.com/"
+    },
+    "composio_baseline": {
+      "auth_methods": "DCR_OAUTH",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: Yes (model-context-protocol)"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'get started'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 16,
+    "name": "LiveAgent",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer Service Platform - A comprehensive suite for customer support including live chat, ticketing, and help desk functionalities.",
+      "auth_methods": "API Key, OAuth2 (for SSO with Google, Microsoft, Facebook, Okta)",
+      "self_serve_vs_gated": "Free 30-day trial available for all plans. Paid plans start at $15/agent/month. API access is available with paid plans.",
+      "api_surface": "REST API (v1 and v3). Supports a wide range of actions including managing tickets, conversations, customers, and agents. API v3 is actively developed. API rate limit of 180 requests per minute per API key.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The API is well-documented and supports core customer service operations. The main blocker would be understanding the specific API version and its capabilities for the intended integration.",
+      "evidence_urls": "https://www.liveagent.com/api/, https://support.liveagent.com/hc/en-us/sections/567924-Documentation, https://www.liveagent.com/pricing/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://www.liveagent.com/api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 17,
+    "name": "Plain",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer Support Platform - A unified workspace for customer support teams, offering AI-powered assistance, integrations, and automation.",
+      "auth_methods": "API Key (Machine Users), OAuth2 (SSO for human users)",
+      "self_serve_vs_gated": "Self-serve for a free trial (Foundation plan), gated for higher tiers (Horizon, Frontier) requiring sales calls.",
+      "api_surface": "GraphQL API. Broad surface area, with full API-UI parity. MCP server exists.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The API is extensive and well-documented, with SDKs available.",
+      "evidence_urls": "https://www.plain.com/pricing, https://docs.plain.com/graphql/api-explorer.md, https://docs.plain.com/graphql/authentication.md, https://docs.plain.com/graphql/introduction.md"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'book a demo'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": true,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://docs.plain.com/graphql/api-explorer.md",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 18,
+    "name": "Help Scout",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer Service Platform - Help Scout provides a suite of tools for customer support, including a shared inbox, knowledge base (Docs), and live chat (Beacon).",
+      "auth_methods": "API Key (for Docs API), OAuth 2.0 (Client Credentials or Authorization Code flow for Inbox API)",
+      "self_serve_vs_gated": "Free plan available with limitations. Paid plans (Standard, Plus, Pro) offer API access and are available via self-serve with a free trial. Some advanced features like SCIM provisioning require the Pro plan.",
+      "api_surface": "REST API. Offers separate APIs for Mailbox (v2) and Docs (v1). Supports webhooks. No GraphQL API mentioned. MCP server is not explicitly mentioned.",
+      "buildability_verdict": "Yes, an agent toolkit can be built today. The primary blocker for advanced integrations might be the lack of granular OAuth scopes and the inability to create users via the Mailbox API (requiring UI invite or SCIM on Pro plan).",
+      "evidence_urls": "https://developer.helpscout.com/mailbox-api/, https://developer.helpscout.com/docs-api/, https://www.helpscout.com/pricing/, https://developer.helpscout.com/, https://stitchflow.com/blog/helpscout-user-management-api-guide"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'book a demo'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.helpscout.com/mailbox-api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 19,
+    "name": "Gorgias",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Gorgias is a customer support and helpdesk platform purpose-built for e-commerce brands, unifying customer conversations across channels and automating repetitive tasks with AI agents and macros.",
+      "auth_methods": "Gorgias supports both API Key (HTTP Basic Authentication) for private apps and OAuth2 for public apps.",
+      "self_serve_vs_gated": "Developers can create a trial account and reach out to techpartners@gorgias.com to convert it into a developer account, which may require a draft app. Public apps require registration on the Developer Portal and approval. Private apps do not require approval.",
+      "api_surface": "Gorgias offers a documented REST API that provides full CRUD access to tickets, customers, macros, integrations, and widgets. It also has a Model Context Protocol (MCP) server, currently in beta, which allows AI assistants to access Gorgias data.",
+      "buildability_verdict": "Yes, Gorgias could be an agent toolkit today. The main blocker, if any, would be understanding the specific requirements for public app approval and the beta status of the MCP server, though private apps and the REST API are readily available for integration.",
+      "evidence_urls": "https://developers.gorgias.com/reference/introduction, https://gorgias.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Gated",
+    "dom_self_serve_evidence": "Signal: 'book a demo'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.gorgias.com/reference/introduction",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 20,
+    "name": "Gladly",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Customer Service Software / AI-powered Customer Experience Platform: Gladly is a customer service software platform that puts customers at the center of every experience, managing interactions across multiple channels (voice, email, chat, SMS, social) into a single, lifelong conversation. It leverages AI to provide efficient and personal customer experiences.",
+      "auth_methods": "Basic Authentication with API tokens. Supports SAML 2.0 for Single Sign-On (SSO).",
+      "self_serve_vs_gated": "Gladly offers a free 30-day trial for its Shopify App Store plan, with usage-based pricing thereafter. For its enterprise 'Hero' and 'Superhero' packages, pricing is quote-based and requires a sales call.",
+      "api_surface": "Gladly offers a documented REST API and a Lookup API. It does not appear to have an existing Model Context Protocol (MCP) server, though it integrates with MCP clients.",
+      "buildability_verdict": "Gladly could potentially be an agent toolkit today, as it has a documented REST API and supports AI features. The main blocker would be the lack of a readily available MCP server implementation from Gladly itself, which would require custom development to integrate with MCP-based AI agents.",
+      "evidence_urls": "https://gladly.com/, https://help.gladly.com/s/article/Authentication, https://developer.gladly.com/, https://www.gladly.com/pricing, https://www.gladly.com/about"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.gladly.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 21,
+    "name": "Slack",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Communication and Collaboration Platform: Slack is an AI-powered platform for work that brings conversations, apps, and customers together in one place, simplifying and enhancing productivity.",
+      "auth_methods": "OAuth 2.0 is the recommended authentication method. API access tokens are also supported but not recommended for all use cases. Mutual TLS is supported for verifying requests from Slack.",
+      "self_serve_vs_gated": "Slack offers a free tier with limitations on message history and app integrations. Paid plans (Pro, Business+, Enterprise Grid) offer more features and are available on a self-serve basis, with custom pricing for Enterprise Grid. Developers can create apps and obtain credentials through the Slack API Apps page, which is generally self-serve.",
+      "api_surface": "Slack provides a documented RESTful Web API. While not strictly REST, it is HTTP-based. There is also an Events API for real-time notifications and an Admin API for managing enterprise organizations. A Model Context Protocol (MCP) server is available for AI integrations, and there are community-developed GraphQL APIs.",
+      "buildability_verdict": "Yes, Slack can be an agent toolkit today. The main blocker, if any, would be the complexity of integrating with the various APIs and ensuring proper scope management for the desired agent functionalities. The availability of the MCP server and the robust Web API surface make it highly buildable.",
+      "evidence_urls": "https://slack.com/, https://api.slack.com/docs, https://api.slack.com/authentication, https://api.slack.com/pricing, https://github.com/AdamZaczek/Slack-API-GraphQL, https://slack.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'free forever' | Also: 'contact sales'",
+    "dom_auth": {
+      "OAuth2": "OpenAPI Spec (OAuth2)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/slack.com/1.7.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 22,
+    "name": "Twilio",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Communications Platform as a Service (CPaaS). Twilio provides APIs for SMS, voice, video, email, and other communication channels, enabling developers to embed communication features into their applications.",
+      "auth_methods": "API Key, Basic Authentication, OAuth2 (implied through SDKs and general API practices, though not explicitly detailed as a primary method in search results).",
+      "self_serve_vs_gated": "Self-serve. Developers can sign up for a free trial with no credit card required for many services, and paid plans are available on a usage-based or subscription model. Some advanced features or enterprise solutions might involve sales consultations.",
+      "api_surface": "Documented REST API. Twilio also offers an MCP (Model Context Protocol) server which provides structured access to its API surface for AI coding agents, exposing over 1,800 endpoints across 30+ products. OpenAPI specifications are available.",
+      "buildability_verdict": "Yes, Twilio could be an agent toolkit today. The main blocker, if any, would be the complexity of navigating its extensive API surface (over 1,800 endpoints) and understanding the nuances of different products for specific use cases. However, the MCP server is specifically designed to mitigate this by providing AI agents with direct, structured access to API schemas.",
+      "evidence_urls": "https://www.twilio.com/docs, https://www.twilio.com/pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'contact sales'",
+    "dom_auth": {
+      "Basic": "OpenAPI Spec (Basic)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/twilio.com/api/1.42.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 23,
+    "name": "Zoho Cliq",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Zoho Cliq is a real-time business communication and collaboration platform designed to bring teams together in a structured and productive environment, enabling communication through instant messaging, voice, video, and file sharing.",
+      "auth_methods": "OAuth 2.0 is used for authentication.",
+      "self_serve_vs_gated": "Zoho Cliq offers a free version and a free trial. Paid plans start at $18/month. Developers can register applications in the Zoho API Console to obtain Client ID and Client Secret credentials, suggesting a self-serve model for API access.",
+      "api_surface": "Zoho Cliq offers a documented REST API (v2 and v3). It also has a Model Context Protocol (MCP) server, which acts as a standardized bridge for AI agents to interact with Cliq's data, apps, and actions.",
+      "buildability_verdict": "Yes, Zoho Cliq could be an agent toolkit today. The main blocker is not a lack of API surface or authentication methods, but rather the need for an agent to be built to leverage the existing MCP server and REST APIs effectively. The MCP server is specifically designed to allow AI agents to take action across Cliq and other Zoho apps.",
+      "evidence_urls": "https://www.zoho.com/cliq/help/api/introduction.html, https://www.zoho.com/cliq/help/api/authentication.html, https://www.zoho.com/cliq/help/api/register-application.html, https://www.zoho.com/cliq/help/api/api-reference.html, https://www.zoho.com/cliq/help/api/model-context-protocol.html, https://www.zoho.com/cliq/pricing.html"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 24,
+    "name": "Lark",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Collaboration Platform - An all-in-one platform for communication, project management, and document collaboration.",
+      "auth_methods": "OAuth2, API Key (App Access Token, Tenant Access Token, User Access Token)",
+      "self_serve_vs_gated": "Self-serve for basic features (free plan), gated for advanced API access and enterprise features (paid plans require sales consultation).",
+      "api_surface": "REST API. Extensive surface area covering messaging, docs, sheets, calendar, users, and more. MCP server exists.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The MCP server and extensive APIs provide a strong foundation for agent integration.",
+      "evidence_urls": "https://larksuite.com/pricing, https://open.larksuite.com/document/server-docs/introduction, https://open.larksuite.com/document/server-docs/guides/getting-started/create-app, https://github.com/guidance-ai/guidance-lark-mcp"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 25,
+    "name": "Pumble",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Team Communication & Collaboration Software: Pumble is a free team chat app designed for businesses to streamline communication and collaboration through channels, direct messages, threads, file sharing, and video conferencing. It offers unlimited message history and users on its free plan, making it a cost-effective alternative to platforms like Slack.",
+      "auth_methods": "OAuth2, API Key, Basic (implied through API addon usage). Pumble supports OAuth2 for SSO and for its MCP server. API keys are generated via an API addon for direct API interaction.",
+      "self_serve_vs_gated": "Self-serve. Pumble offers a generous free plan with unlimited users and message history. Developers can obtain API keys and access documentation without requiring a paid plan or sales call.",
+      "api_surface": "Documented REST API. Pumble has a documented API, accessible through its API addon and also via a MindCloud Universal API integration. It also features a Model Context Protocol (MCP) server for AI agent integration.",
+      "buildability_verdict": "Yes, Pumble could be an agent toolkit today. The main blocker is the potential for the existing Pumble MCP server to have limited functionality compared to a more comprehensive solution like the 'pumble-mcp' project which exposes more tools and uses OAuth2. However, the availability of an API addon and MCP server with documented endpoints allows for integration.",
+      "evidence_urls": "https://pumble.com/, https://pumble.com/pricing, https://pumble.com/api, https://pumble.com/integrations, https://pumble.com/help/api-addon-documentation, https://pumble.com/help/mcp-server-documentation"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'book a demo'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://pumble.com/api",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 26,
+    "name": "Discord",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Communication and Collaboration Platform: Discord is a free, voice, video, and text communication service to talk and hang out over voice and video. It's most similarly described as a platform for communities to gather, talk, and hang out.",
+      "auth_methods": "OAuth2, Bot Tokens, Webhooks, User Tokens (for unofficial user bots, though this is against ToS).",
+      "self_serve_vs_gated": "Self-serve. Developers can create applications and obtain bot tokens and OAuth2 credentials for free through the Discord Developer Portal. Some advanced features or scopes may require approval or partnership, but basic API access is freely available.",
+      "api_surface": "Discord offers a documented REST API and a WebSocket Gateway API for real-time events. There is no official GraphQL API, though community discussions exist. There are community-developed Model Context Protocol (MCP) servers that interface with the Discord API.",
+      "buildability_verdict": "Yes, Discord can be an agent toolkit today. The main blocker for seamless integration might be the need to manage bot tokens and permissions carefully, and understanding the nuances of the Gateway API for real-time interactions. However, the existence of MCP servers indicates a strong potential for agent integration.",
+      "evidence_urls": "https://discord.com/developers/docs/intro, https://discord.com/developers/docs/topics/oauth2, https://discord.com/developers/docs/intro#authentication, https://github.com/anthropic-ai/model-context-protocol/tree/main/discord-mcp-server, https://discord.com/developers/docs/topics/gateway"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://discord.com/developers/docs/intro",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 27,
+    "name": "Telegram",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Messaging and Communication - A cloud-based instant messaging service with a focus on speed, security, and features for both users and developers.",
+      "auth_methods": "API Token (BotFather)",
+      "self_serve_vs_gated": "Self-serve (free to create bots and obtain API tokens via BotFather)",
+      "api_surface": "REST API (Bot API). Extensive methods for bot interactions, message handling, inline queries, payments, etc. A local Bot API server can also be run.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The Bot API is well-documented and provides a straightforward way to integrate with Telegram.",
+      "evidence_urls": "https://core.telegram.org/bots/api, https://telegram.org/blog/api"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://core.telegram.org/bots/api",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 28,
+    "name": "WhatsApp Business",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Messaging API - Enables businesses to communicate with customers at scale via WhatsApp, supporting automation, CRM integration, and broadcast messaging.",
+      "auth_methods": "OAuth 2.0, API Key (Access Token)",
+      "self_serve_vs_gated": "Gated; requires Meta Business Manager verification and typically involves a Business Solution Provider (BSP) for setup and management, though direct Cloud API integration is possible for developers.",
+      "api_surface": "REST API. Broad surface area covering messaging, business profiles, message templates, and more. Meta Cloud API is the current offering.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The main blocker would be the complexity of obtaining and managing API access and message template approvals, which BSPs help to mitigate.",
+      "evidence_urls": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started, https://business.whatsapp.com/products/whatsapp-business-api, https://developers.facebook.com/docs/whatsapp/api/authentication, https://developers.facebook.com/docs/whatsapp/api/messages/message-templates"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 29,
+    "name": "Aircall",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Cloud-based business phone system and call center software with API integrations.",
+      "auth_methods": "OAuth2, Basic Auth (API Key)",
+      "self_serve_vs_gated": "Developers can get credentials for their own account via API keys. For building apps for the marketplace or other customers, OAuth is required, which involves a partner registration process. A 7-day free trial is available, but requires a minimum of 3 licenses.",
+      "api_surface": "REST API. The API covers core functionalities like calls, contacts, users, numbers, and webhooks. A dedicated sandbox environment is not offered, but testing can be done with temporary users/numbers within an existing account.",
+      "buildability_verdict": "Yes, Aircall's API is well-documented and supports integrations, making it suitable for building agent toolkit functionalities. The main blocker might be the lack of a dedicated sandbox environment for extensive testing, requiring careful management of test data within a live account.",
+      "evidence_urls": "https://developer.aircall.io/, https://aircall.io/partners/registration/, https://developer.aircall.io/api-references/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'sign up' | Also: 'talk to sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.aircall.io/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 30,
+    "name": "Vonage",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Communications APIs - A platform for building and integrating real-time communication features like voice, video, and messaging into applications.",
+      "auth_methods": "API Key/Secret (Basic Auth), JWT Bearer Authentication",
+      "self_serve_vs_gated": "Offers free evaluation trials and self-service tools for API access. Some advanced features or higher usage may require sales consultation or paid plans.",
+      "api_surface": "REST API. Broad surface area covering Voice, Messaging (SMS, MMS, RCS, WhatsApp, etc.), Video, Verify (2FA), Identity Insights, and more. Supports WebSockets for real-time audio. MCP server is not explicitly mentioned, but the platform architecture supports complex integrations.",
+      "buildability_verdict": "Yes, Vonage's APIs are designed for integration and can be used to build agent toolkits. The primary blocker would be the complexity of integrating multiple Vonage APIs and potentially managing different authentication methods for different services.",
+      "evidence_urls": "https://www.vonage.com/communications-apis/, https://developer.vonage.com/, https://www.vonage.com/pricing/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (Bearer)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/vonage.com/account/1.11.8/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 31,
+    "name": "Google Ads",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Advertising & Marketing - A platform for businesses to create and manage online advertisements.",
+      "auth_methods": "OAuth2, Developer Token",
+      "self_serve_vs_gated": "Self-serve for API access, but requires a Google Ads account and developer token. No sales call needed for API credentials.",
+      "api_surface": "REST API. The API covers a broad range of Google Ads functionalities, including campaign management, ad creation, reporting, and bidding. A MCP (Multi-Client Advertiser) server is not explicitly mentioned in the documentation, but the API is designed for managing multiple accounts.",
+      "buildability_verdict": "Can be an agent toolkit today. The API is well-documented and provides comprehensive access to Google Ads functionalities. The primary blocker for immediate use might be the complexity of managing OAuth 2.0 flows and developer tokens, but these are standard for many ad platforms.",
+      "evidence_urls": "https://developers.google.com/google-ads/api/docs/get-started/make-first-call, https://developers.google.com/google-ads/api/docs/oauth/overview, https://developers.google.com/google-ads/api/docs/concepts/overview"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0",
+      "API_Key": "private key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.google.com/google-ads/api/docs/get-started/make-first-call",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 32,
+    "name": "Meta Ads",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Advertising Platform - Enables businesses to create, manage, and analyze advertising campaigns across Meta's platforms (Facebook, Instagram, etc.).",
+      "auth_methods": "OAuth 2.0, System User Tokens",
+      "self_serve_vs_gated": "Self-serve for developers via Meta for Developers portal, but requires app review and business verification for advanced access and higher quotas.",
+      "api_surface": "REST API (Marketing API, Insights API, Ad Library API). Broad surface area covering campaign management, reporting, and ad data. MCP server is not explicitly mentioned but implied by the platform's scale.",
+      "buildability_verdict": "Yes, can be an agent toolkit. Main blockers are the complexity of token management, error handling, and the need for app review/business verification for full functionality.",
+      "evidence_urls": "https://developers.facebook.com/docs/marketing-api/, https://developers.facebook.com/docs/marketing-api/overview/, https://developers.facebook.com/docs/marketing-api/authentication/, https://developers.facebook.com/docs/marketing-api/access-levels/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 33,
+    "name": "LinkedIn Ads",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "LinkedIn Ads is an online advertising platform that helps businesses reach professional audiences, promote products and services, generate leads, and drive business growth through targeted advertising campaigns.",
+      "auth_methods": "OAuth 2.0 (Authorization Code Flow and Client Credentials Flow)",
+      "self_serve_vs_gated": "LinkedIn Ads API is primarily gated. While there are limited self-serve options for basic functionalities like 'Sign In with LinkedIn' and 'Share on LinkedIn', accessing the Marketing Developer Platform for ad campaign management requires a formal application, partner review, and often involves custom pricing and a lengthy approval process. Free access is very limited, and most advanced features require a paid plan or partnership agreement.",
+      "api_surface": "LinkedIn Ads offers a documented REST API. There is no readily available information indicating the presence of a Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Building an agent toolkit for LinkedIn Ads is feasible, but the main blocker is the gated nature of the API and the associated complexities in obtaining credentials and navigating the approval process. The cost and time involved in becoming an approved partner can be significant, making it challenging for individual developers or smaller teams to build comprehensive agent toolkits.",
+      "evidence_urls": "https://www.linkedin.com/developers/apps, https://developer.linkedin.com/marketing-solutions/ads, https://business.linkedin.com/marketing-solutions/ads, https://help.linkedin.com/app/answers/detail/a_id/1311"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'get started'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.linkedin.com/marketing-solutions/ads",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 34,
+    "name": "GoHighLevel",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "CRM & Marketing Automation - A comprehensive platform for agencies and businesses to manage clients, automate marketing efforts, and streamline operations.",
+      "auth_methods": "OAuth 2.0, Private Integration Token (API Key)",
+      "self_serve_vs_gated": "Free 30-day trial available. API access requires the 'Unlimited' plan ($297/month) or higher.",
+      "api_surface": "REST API. Broad surface area covering CRM, contacts, messaging, calendars, payments, workflows, and more. MCP server is not explicitly mentioned, but custom applications and integrations are supported.",
+      "buildability_verdict": "Yes, it can be an agent toolkit. The primary blocker for a fully self-serve, free tier integration would be the cost of the 'Unlimited' plan required for API access.",
+      "evidence_urls": "https://www.gohighlevel.com/pricing, https://marketplace.gohighlevel.com/docs/, https://www.gohighlevel.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact us'",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://marketplace.gohighlevel.com/docs/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 35,
+    "name": "Mailchimp",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Mailchimp is an all-in-one integrated marketing platform designed for small businesses to grow their business on their own terms. It provides tools for email marketing, audience management, campaign creation, and more.",
+      "auth_methods": "Mailchimp supports API Key authentication (using HTTP Basic Authentication or Bearer Authentication) and OAuth 2.0 authentication.",
+      "self_serve_vs_gated": "Developers can obtain an API key by creating a Mailchimp account, which can be done for free. While some features and API access levels may be tied to paid plans, the basic ability to generate an API key and interact with the API is available without a paid subscription.",
+      "api_surface": "Mailchimp offers a documented RESTful API, referred to as the Mailchimp Marketing API. There is no readily available information indicating a GraphQL API for the Marketing API, though Mailchimp Open Commerce does have a GraphQL API. There are existing Model Context Protocol (MCP) servers for the Mailchimp Marketing API.",
+      "buildability_verdict": "Yes, Mailchimp could be an agent toolkit today. The main blocker is not a lack of API surface or documentation, but rather the potential complexity in managing different Mailchimp plan limitations and user roles that might restrict API access for certain actions. Additionally, while API keys are available, using OAuth 2.0 for third-party integrations is recommended for better security and user data access, which adds a layer of implementation complexity.",
+      "evidence_urls": "https://mailchimp.com/developer/, https://mailchimp.com/pricing/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://mailchimp.com/developer/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 36,
+    "name": "Klaviyo",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Marketing Automation - Klaviyo is a marketing automation platform that helps businesses send targeted emails and SMS messages to their customers.",
+      "auth_methods": "OAuth2, API Key (Private and Public)",
+      "self_serve_vs_gated": "Self-serve with a free plan available for up to 250 active profiles. Paid plans start at $20/month.",
+      "api_surface": "REST API. Supports full CRUD operations. Offers both server-side and client-side APIs. Has a modern API generation with versioning.",
+      "buildability_verdict": "Yes, Klaviyo can be an agent toolkit today. The API is well-documented, supports REST, and offers multiple authentication methods, making integration straightforward.",
+      "evidence_urls": "https://developers.klaviyo.com/, https://www.klaviyo.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'start for free'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.klaviyo.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 37,
+    "name": "systeme.io",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Sales and Marketing Platform: Systeme.io is an all-in-one platform that provides tools for building sales funnels, email marketing, creating online courses, selling online, and blogging.",
+      "auth_methods": "API Key authentication is used for systeme.io's public API. Developers can create and manage API keys within their account settings.",
+      "self_serve_vs_gated": "Systeme.io offers a free plan with limited features, and paid plans starting at $17/month. Developers can obtain API credentials (API keys) through their account settings, which are available on both free and paid plans.",
+      "api_surface": "Systeme.io offers a documented REST API. There is no mention of an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, Systeme.io could be an agent toolkit today. The main blocker is the lack of a readily available GraphQL API, which would offer more flexibility for certain types of agent interactions. However, the existing REST API and API key authentication provide a solid foundation for integration.",
+      "evidence_urls": "https://systeme.io/pricing, https://help.systeme.io/en/articles/8709700-how-to-use-systeme-io-s-public-api, https://help.systeme.io/en/articles/8709704-how-to-create-a-public-api-key-in-systeme-io"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'start for free'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 38,
+    "name": "Pinterest",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Social Media & Visual Discovery - A platform for discovering and sharing visual content, ideas, and inspiration.",
+      "auth_methods": "OAuth 2.0",
+      "self_serve_vs_gated": "Self-serve for trial access, gated for full production access (requires app review and approval).",
+      "api_surface": "REST API. Broad surface area covering content management, ad management, targeting, shopping, and analytics.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The main blocker would be the app review process for production access, but trial access is available for development.",
+      "evidence_urls": "https://developers.pinterest.com/docs/getting-started/getting-access/, https://developers.pinterest.com/docs/api-reference/apis/, https://developers.pinterest.com/docs/getting-started/authentication/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'sign up'",
+    "dom_auth": {
+      "OAuth2": "authorization code"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.pinterest.com/docs/getting-started/getting-access/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 39,
+    "name": "Threads",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Social Media Platform - A text-focused social networking service developed by Meta, designed as a companion app to Instagram.",
+      "auth_methods": "OAuth 2.0",
+      "self_serve_vs_gated": "Gated: Requires Meta app creation, Tech Provider Verification, and permission-level app review.",
+      "api_surface": "REST API (graph.threads.net). Supports publishing, replies, and analytics. Uses a two-step container model for content creation.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The main blocker is the app review process and the need for Tech Provider Verification, which adds overhead but is achievable.",
+      "evidence_urls": "https://developers.facebook.com/docs/threads/, https://developers.facebook.com/docs/threads/api-reference/, https://developers.facebook.com/docs/threads/api-reference/publish-media/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 40,
+    "name": "SendGrid",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "SendGrid is a cloud-based email service that provides a platform for sending transactional and marketing emails at scale. It offers features like email delivery, analytics, and template management.",
+      "auth_methods": "API Keys (Bearer token), Basic Authentication (with API key as password, username as 'apikey'). Two-factor authentication (2FA) is recommended for security.",
+      "self_serve_vs_gated": "SendGrid offers a free trial (60 days, 100 emails/day) and paid plans starting from $19.95/month for Essentials. A permanent free plan is no longer available. Developers can get started with the free trial without a sales call.",
+      "api_surface": "SendGrid offers a documented REST API (v2 and v3). There are also existing Model Context Protocol (MCP) server implementations available, allowing AI models to interact with SendGrid's services.",
+      "buildability_verdict": "Yes, SendGrid could be an agent toolkit today. The main blocker is not a technical one, but rather the need for an agent to have the correct API key and permissions configured to interact with the SendGrid API.",
+      "evidence_urls": "https://sendgrid.com/docs/api-reference/, https://sendgrid.com/pricing/"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (ApiKey)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/sendgrid.com/1.0.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 41,
+    "name": "Shopify",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Shopify is an e-commerce platform that provides tools for businesses to create and manage online stores, sell products, and process orders. It offers a comprehensive suite of services for building, customizing, and scaling online businesses.",
+      "auth_methods": "Shopify supports OAuth 2.0 for app authentication and authorization. For customer accounts, it offers email OTP, social login, and advanced flows through an OAuth/OIDC provider. API keys and client secrets are used for app authentication and webhook verification. Basic authentication methods are also mentioned in the context of legacy systems, but OAuth 2.0 is the industry standard for public apps.",
+      "self_serve_vs_gated": "Developers can obtain API credentials and access documentation for free to build apps and integrations. Shopify offers a free trial period for its platform. However, access to certain advanced APIs or features, like those in Shopify Plus, may require a paid plan or specific agreements. Basic and Grow plans are available for smaller businesses, while Advanced and Plus are for larger, scaling businesses.",
+      "api_surface": "Shopify offers both REST and GraphQL APIs. The GraphQL Admin API is the preferred and modern approach, with many REST Admin API endpoints being deprecated. They also provide a Storefront API (GraphQL), Payments Apps API, Partner API, and others. There is no mention of an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, Shopify could be an agent toolkit today. The platform has extensive APIs (REST and GraphQL) and a well-documented developer ecosystem, making it suitable for integration. The main blocker, if any, would be the complexity of managing different API versions and ensuring compatibility across various Shopify plans and features.",
+      "evidence_urls": "https://www.shopify.com/partners/api-partners, https://shopify.dev/docs/api, https://www.shopify.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY, S2S_OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'start for free'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://shopify.dev/docs/api",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 42,
+    "name": "WooCommerce",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "E-commerce Platform - An open-source e-commerce plugin for WordPress that allows users to create and manage online stores.",
+      "auth_methods": "API Key (Consumer Key/Secret), Basic Auth, OAuth 2.0 (for third-party app integration)",
+      "self_serve_vs_gated": "Self-serve. API keys can be generated directly from the WooCommerce admin interface by users with administrative access.",
+      "api_surface": "REST API (v3 is current and recommended), GraphQL API (experimental, via Dual API), Store API (for cart/checkout/product functionality, unauthenticated). Extensive surface area covering products, orders, customers, coupons, reports, settings, etc.",
+      "buildability_verdict": "Yes, this can be an agent toolkit today. The primary blocker would be the need for an administrator to generate API keys within their WooCommerce instance, which is a standard self-serve process.",
+      "evidence_urls": "https://woocommerce.com/document/woocommerce-rest-api/, https://woocommerce.com/document/woocommerce-api-keys/, https://woocommerce.com/document/woocommerce-rest-api/authentication/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 43,
+    "name": "BigCommerce",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "E-commerce Platform - A comprehensive SaaS platform for businesses to create and manage online stores, offering tools for product management, sales, marketing, and integrations.",
+      "auth_methods": "OAuth 2.0, API Key, JWT, Single Sign-On (SSO), Two-Factor Authentication (2FA)",
+      "self_serve_vs_gated": "Self-serve with a free trial available. Paid plans start at $39/month, with custom pricing for Enterprise.",
+      "api_surface": "REST API (v2 and v3) and GraphQL API. Broad surface area covering products, orders, customers, cart, checkout, and more. MCP server exists.",
+      "buildability_verdict": "Yes, BigCommerce can be an agent toolkit today. The main blocker would be the complexity of managing API versions (v2 vs. v3) and understanding the specific scopes required for different API accounts.",
+      "evidence_urls": "https://www.bigcommerce.com/pricing/, https://developer.bigcommerce.com/api-reference, https://developer.bigcommerce.com/api-accounts"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.bigcommerce.com/api-reference",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 44,
+    "name": "Salesforce Commerce",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Salesforce Commerce Cloud is an e-commerce platform that provides solutions for both B2C (business-to-consumer) and B2B (business-to-business) markets, enabling businesses to build and manage online stores, personalize customer experiences, and handle transactions.",
+      "auth_methods": "OAuth2 (specifically, bearer tokens obtained via Account Manager and SLAS), API Keys, and potentially other standard authentication protocols for API access. Multi-factor authentication (MFA) is also a key security feature for user access.",
+      "self_serve_vs_gated": "Gated. While Salesforce offers free trials for some of its CRM products, including Commerce Cloud, obtaining full credentials and access for development typically requires a paid plan, a sales call, or a partner agreement. Pricing is generally based on Gross Merchandise Value (GMV) and requires custom quotes.",
+      "api_surface": "Yes, Salesforce Commerce Cloud offers documented REST APIs, including the B2C Commerce API (SCAPI) and Open Commerce API (OCAPI). There is also evidence of a Model Context Protocol (MCP) server being used for AI integrations with Commerce Cloud.",
+      "buildability_verdict": "Yes, this could be an agent toolkit today. The primary blocker, if any, would be the complexity and cost associated with obtaining and maintaining the necessary credentials and access for a production environment, as it is a gated service.",
+      "evidence_urls": "https://www.salesforce.com/products/commerce-cloud/pricing/, https://developer.salesforce.com/docs/commerce/commerce-api/overview, https://developer.salesforce.com/docs/commerce/commerce-api/guide/get-started-with-b2c-commerce-api.html, https://help.salesforce.com/s/articleView?id=sf.commerce_cloud_trial_signup.htm&type=5, https://developer.salesforce.com/docs/commerce/commerce-api/overview, https://developer.salesforce.com/docs/commerce/commerce-api/guide/get-started-with-b2c-commerce-api.html"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'sign up' | Also: 'contact us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 45,
+    "name": "Magento",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Magento is an e-commerce platform that provides merchants with a flexible and scalable foundation for building online stores. It offers tools for creating shopping experiences, managing products, and processing orders.",
+      "auth_methods": "Magento supports OAuth 1.0a and OAuth 2.0, token-based authentication (admin tokens, customer tokens, integration tokens), API Key authentication, Basic Authentication, and JWT Authentication. It also integrates with external identity providers.",
+      "self_serve_vs_gated": "Developers can obtain API credentials (consumer key, consumer secret, access token) by creating an integration within the Magento admin panel. This process is generally self-serve for obtaining credentials, though the platform itself (Adobe Commerce) has various paid tiers and licensing fees. Magento Open Source is free to use, but development, hosting, and extensions incur costs.",
+      "api_surface": "Magento offers both documented REST and GraphQL APIs. There are also community-developed Model Context Protocol (MCP) servers available for Magento 2, enabling AI clients to interact with Magento data.",
+      "buildability_verdict": "Yes, Magento can be an agent toolkit today. The primary blocker for seamless integration might be the complexity of the Magento platform itself and the need for specialized developers for advanced customizations or integrations, rather than a lack of API surface or authentication methods. The availability of MCP servers further enhances its suitability for AI agent integration.",
+      "evidence_urls": "https://developer.adobe.com/commerce/webapi/rest/, https://developer.adobe.com/commerce/webapi/graphql/, https://account.magento.com/, https://www.magentocommerce.com/pricing, https://github.com/boldcommerce/magento2-mcp, https://www.mageworx.com/magento-2-api-guide/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": true,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.adobe.com/commerce/webapi/rest/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 46,
+    "name": "Squarespace",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Website Builder and E-commerce Platform: Squarespace allows users to create and manage websites, online stores, and portfolios with a focus on design and ease of use.",
+      "auth_methods": "OAuth2 and API Keys.",
+      "self_serve_vs_gated": "Developers can generate API keys for custom applications on paid plans (specifically mentioned for Commerce Advanced plan for certain APIs, but generally available for integrations). OAuth 2.0 is used for Squarespace Extensions and requires registration. Free trial is available for the platform, but API access for advanced features might be tied to specific paid plans.",
+      "api_surface": "Squarespace offers a documented REST API, primarily focused on Commerce APIs (Products, Orders, Inventory, Transactions, Contacts) and a Website API for site details. There is no mention of a GraphQL API or an existing Model Context Protocol (MCP) server provided by Squarespace itself, although third-party MCP servers exist that integrate with Squarespace's APIs.",
+      "buildability_verdict": "Potentially buildable as an agent toolkit, but with limitations. The main blocker is the lack of a native MCP server provided by Squarespace, which would allow for direct AI agent control. While third-party MCP solutions exist, their integration and capabilities with Squarespace's specific API surface would need thorough investigation. The API is primarily RESTful and focused on e-commerce and site data, which is a good starting point, but deep site customization or non-commerce related actions might be restricted.",
+      "evidence_urls": "https://developers.squarespace.com/, https://www.squarespace.com/pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'free trial'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.squarespace.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 47,
+    "name": "Ecwid",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Ecwid is a cloud-based e-commerce platform that enables businesses to sell products and services online across various channels, including websites, social media, and marketplaces, from a single dashboard.",
+      "auth_methods": "Ecwid uses OAuth 2.0 for authentication.",
+      "self_serve_vs_gated": "Ecwid offers a free plan with limited product sales. However, access to the Ecwid API for data migration or other advanced functionalities typically requires a paid plan (Venture, Business, or Unlimited). Free plan users cannot use the Ecwid API.",
+      "api_surface": "Ecwid provides a documented REST API that allows developers to access and manage store data, including products, orders, customers, and settings. There is no mention of an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Ecwid's API is well-documented and uses standard authentication methods (OAuth 2.0), making it a strong candidate for integration into an agent toolkit. The main blocker, if any, would be the potential need for a paid plan to access full API capabilities, which might not be suitable for all free-tier agent toolkit scenarios. However, for paid agent toolkits or specific use cases, it is buildable.",
+      "evidence_urls": "https://www.ecwid.com/pricing, https://ecwid.help/rest-api-overview, https://ecwid.help/api-features, https://ecwid.help/app-settings, https://ecwid.help/make-first-api-request"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'get started' | Also: 'contact us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 48,
+    "name": "Gumroad",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "E-commerce - Platform for creators to sell digital products and memberships directly to their audiences.",
+      "auth_methods": "OAuth2 / API Key (Bearer Token)",
+      "self_serve_vs_gated": "Self-serve (developers can create applications and generate access tokens/API keys from their Gumroad account settings).",
+      "api_surface": "REST API. Approximately 26 endpoints covering product management, offer codes, license key generation/verification, sales and subscriber lookups, custom fields, webhooks, and authenticated user records. A 'MCP server' (likely referring to a specific integration platform like MindCloud) exists for accessing Gumroad's API.",
+      "buildability_verdict": "Yes, it can be an agent toolkit today. The main blocker, if any, would be the lack of an 'updated_at' timestamp for resources, requiring workarounds like webhooks for change detection.",
+      "evidence_urls": "https://www.gumroad.com/developers, https://app.jentic.com/sign-up, https://v1.nocodeapi.com/<username>/gumroad/<token>/singleSubscriber. Copy, https://www.integromat.com/oauth/cb/gumroad, https://gumroad.com/settings/advanced"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: '$0'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 49,
+    "name": "Amazon Selling Partner",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "E-commerce Platform API - Provides programmatic access to Amazon seller and vendor data for orders, shipments, payments, inventory, and more.",
+      "auth_methods": "OAuth 2.0",
+      "self_serve_vs_gated": "Self-serve for developers, but requires registration and adherence to Amazon's policies. Note: Amazon previously announced fees for third-party developers, but these were cancelled in May 2026.",
+      "api_surface": "REST API. Offers a broad range of endpoints covering various aspects of Amazon selling. A GraphQL API is available via the Data Kiosk API for dynamic reporting.",
+      "buildability_verdict": "Yes, this can be an agent toolkit today. The primary blocker for building a comprehensive toolkit would be the complexity and breadth of the API surface, requiring significant development effort to cover all functionalities.",
+      "evidence_urls": "https://sellercentral.amazon.com/, https://developer-docs.amazon.com/sp-api/, https://developer-docs.amazon.com/sp-api/docs/sp-api-overview, https://developer-docs.amazon.com/sp-api/docs/sp-api-pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "API_Key": "api token"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer-docs.amazon.com/sp-api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 50,
+    "name": "fanbasis",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "SaaS, FinTech, E-commerce - An all-in-one platform for digital businesses to sell products, services, and memberships, integrating payments, hosting, fulfillment, and analytics.",
+      "auth_methods": "API Key, OAuth2",
+      "self_serve_vs_gated": "Self-serve signup available, but booking a demo call is recommended for getting started.",
+      "api_surface": "REST API. Comprehensive reference, Postman collection, and real-time webhooks. SDKs for Node, Python, PHP, Ruby. MCP server exists (requires OAuth support).",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The main blocker would be the need for an MCP server with OAuth support for certain advanced functionalities, but the core API is accessible.",
+      "evidence_urls": "https://www.fanbasis.com/api-docs/, https://www.fanbasis.com/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'sign up'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://www.fanbasis.com/api-docs/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 51,
+    "name": "DataForSEO",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "DataForSEO is an API provider that offers a comprehensive suite of SEO and marketing data, enabling developers to build tools, platforms, and automations for data analysis and insights.",
+      "auth_methods": "Basic Authentication (API Key/Login and Password encoded in Base64).",
+      "self_serve_vs_gated": "Self-serve. Free account registration with a $1 free credit for testing. A $50 minimum deposit is required for production use, after which it's pay-as-you-go.",
+      "api_surface": "Documented REST API. DataForSEO also offers an MCP (Model Context Protocol) server for AI integrations.",
+      "buildability_verdict": "Yes, DataForSEO can be used as an agent toolkit today. Its comprehensive API documentation, client libraries, and MCP server support for AI integrations make it readily buildable. The main blocker would be the need for developers to integrate and manage the API data effectively, as it's an API-first product without a built-in user interface for direct use.",
+      "evidence_urls": "https://www.dataforseo.com/api-documentation, https://www.dataforseo.com/pricing-list, https://www.dataforseo.com/pricing-list"
+    },
+    "composio_baseline": {
+      "auth_methods": "BASIC",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'try for free'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://www.dataforseo.com/api-documentation",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 52,
+    "name": "SE Ranking",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "SE Ranking is a comprehensive SEO software platform that provides tools for keyword research, rank tracking, website audits, backlink analysis, competitor research, and AI search visibility. Its API allows developers to integrate this data and functionality into their own applications and workflows.",
+      "auth_methods": "API Key. Authentication is done via an API key, which can be passed in the 'Authorization: Token YOUR_API_KEY' header or as a 'apikey' query parameter.",
+      "self_serve_vs_gated": "Self-serve with a free trial. SE Ranking offers a 14-day free trial for its platform, which includes API access. Paid plans also come with a monthly allowance of API credits. A standalone API package is also available.",
+      "api_surface": "Yes, SE Ranking offers a documented REST API. They also have an MCP (Model Context Protocol) server, which can be accessed via their API.",
+      "buildability_verdict": "Yes, SE Ranking could be an agent toolkit today. The main blocker is that while they offer an MCP server, its full capabilities and ease of integration for agentic use cases would need further investigation. However, the availability of a well-documented REST API, extensive data points, and a free trial make it a strong candidate.",
+      "evidence_urls": "https://seranking.com/api/documentation, https://seranking.com/pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'talk to sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://seranking.com/api/documentation",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 53,
+    "name": "Ahrefs",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "SEO & Marketing - Provides comprehensive data and tools for search engine optimization, keyword research, backlink analysis, and competitor research.",
+      "auth_methods": "API Key (Bearer Token) / OAuth2",
+      "self_serve_vs_gated": "Gated - Requires an eligible paid plan (Enterprise or specific API add-ons) for full API access. Limited free test queries are available.",
+      "api_surface": "REST API. Broad surface area covering Site Explorer, Keywords Explorer, Rank Tracker, Site Audit, SERP Overview, Batch Analysis, Brand Radar, and Social Media Management. An MCP server exists for AI integrations.",
+      "buildability_verdict": "Yes, with a significant cost barrier. The main blocker is the requirement for an Enterprise plan or a costly API add-on for full access.",
+      "evidence_urls": "https://docs.ahrefs.com/, https://ahrefs.com/pricing, https://ahrefs.com/enterprise"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'talk to sales'",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0",
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.ahrefs.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 54,
+    "name": "MrScraper",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Web Scraping - AI-powered tool to extract data from websites without coding, handling dynamic content and anti-bot measures.",
+      "auth_methods": "API Key (x-api-token)",
+      "self_serve_vs_gated": "Self-serve with a free tier and paid plans starting at $49/month. No sales call required for standard plans.",
+      "api_surface": "REST API. Offers endpoints for AI scraping, batch jobs, Google SERP, and fetching rendered HTML. Breadth appears to cover most core scraping functionalities.",
+      "buildability_verdict": "Yes, it can be an agent toolkit today. The primary blocker for complex integrations might be the occasional API instability or documentation lag reported by some users, but the core API functionality is present.",
+      "evidence_urls": "https://www.mrscraper.com/pricing, https://docs.mrscraper.com/api/ai, https://docs.mrscraper.com/api/scraper-api"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: '$0' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 55,
+    "name": "Apify",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Web Scraping and Automation Platform: Apify provides a platform for developers to build, deploy, and run web scrapers and automation tools in the cloud.",
+      "auth_methods": "API Token (Bearer Token), OAuth 2.0, Agentic Payments (x402, Skyfire)",
+      "self_serve_vs_gated": "Self-serve with a free tier. A free plan is available with $5 in usage credits per billing cycle. Paid plans start at $29/month, with usage-based costs on top of monthly fees. A Creator Plan offers $500 in extra usage for 6 months for new users.",
+      "api_surface": "Documented REST API (API v2). Apify also offers an MCP server (mcp.apify.com) that enables AI models to interact with external tools and data sources through the Model Context Protocol (MCP).",
+      "buildability_verdict": "Yes, Apify can be an agent toolkit today. It has a well-documented REST API and an MCP server, allowing AI agents to interact with its vast library of Actors (micro-apps for web automation) as tools. The main blocker for *full* agentic capability might be the complexity of orchestrating multiple Actors for highly sophisticated tasks, though its SDKs and client libraries aim to simplify this.",
+      "evidence_urls": "https://apify.com/docs/api/v2, https://apify.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'talk to us'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://apify.com/docs/api/v2",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 56,
+    "name": "Firecrawl",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Web Scraping & Data Extraction API: Firecrawl provides an API service that scrapes, crawls, and extracts structured data from any website, offering LLM-ready output for AI applications.",
+      "auth_methods": "API Key (Bearer token authentication).",
+      "self_serve_vs_gated": "Self-serve. Developers can get API keys and start for free without a credit card. Paid plans are available for scaling.",
+      "api_surface": "Yes, Firecrawl has a documented REST API. It also provides an MCP (Model Context Protocol) server, which integrates with tools like Google's Agent Development Kit (ADK).",
+      "buildability_verdict": "Yes, Firecrawl can be used as an agent toolkit today. It is explicitly designed for AI agents and provides tools for scraping, crawling, mapping, searching, and even autonomous web data gathering. Its integration with MCP further enhances its agent capabilities.",
+      "evidence_urls": "https://firecrawl.dev/docs/api-reference/introduction, https://firecrawl.dev/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://firecrawl.dev/docs/api-reference/introduction",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 57,
+    "name": "Bright Data",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Web Data Platform: Bright Data provides a comprehensive suite of tools for collecting, processing, and scaling access to public web data, including proxy networks, scraping APIs, and AI-ready solutions.",
+      "auth_methods": "API Key and Username/Password authentication are supported.",
+      "self_serve_vs_gated": "Bright Data offers a free tier for its MCP server and a free trial for its services. However, many of its advanced features and higher usage tiers require paid plans or contacting sales for enterprise solutions.",
+      "api_surface": "Bright Data offers a documented REST API for its various services, including Web Access APIs, SERP API, and Crawl API. It also has a Model Context Protocol (MCP) server, which acts as an API for AI agents.",
+      "buildability_verdict": "Yes, Bright Data could be an agent toolkit today. Its primary strength lies in its extensive proxy network and robust web scraping capabilities, including its MCP server which is specifically designed to enable AI agents to access and interact with live web data. The availability of SDKs for various programming languages further enhances its buildability for agent development.",
+      "evidence_urls": "https://www.brightdata.com/pricing, https://docs.brightdata.com/authentication, https://docs.brightdata.com/mcp-server/overview, https://docs.brightdata.com/api-reference"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://docs.brightdata.com/mcp-server/overview",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 58,
+    "name": "Sherlock",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Sherlock is an AI-powered platform focused on enhancing security and efficiency in various domains, including interview fraud detection, SRE, and smart contract auditing.",
+      "auth_methods": "API Key, OAuth2",
+      "self_serve_vs_gated": "Offers free tiers/trials for some products (e.g., Sherlocks.ai SRE platform with 30 free investigations/month), while others have paid plans starting from $100/month (Sherlock AI for interviews) or require custom enterprise solutions. Some products mention free access for a limited time or for specific user groups (e.g., students/faculty for Stanford AI services).",
+      "api_surface": "REST API. The API surface appears to be broad, covering chat completion, text embeddings, and vision models, with OpenAI compatibility. MCP (Model Context Protocol) servers are mentioned in the context of connecting to external tools.",
+      "buildability_verdict": "Yes, it can be an agent toolkit. The primary blocker for a comprehensive toolkit might be the varying access models and specific product focuses (e.g., interview fraud vs. SRE vs. smart contracts), requiring integration with specific Sherlock products rather than a single unified API.",
+      "evidence_urls": "https://sherlock.ai/, https://sherlock.ai/pricing, https://cloudferro.com/sherlock/, https://sherlocks.ai/, https://sherlock.ai/documentation, https://apify.com/sherlock-api, https://github.com/sherlock-ai/sherlock-ai-python"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 59,
+    "name": "Waterfall.io",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Data Enrichment API: Waterfall.io provides an API that aggregates data from over 30 vendors to enrich contact and company information, including emails, phone numbers, and job titles.",
+      "auth_methods": "API Key (x-api-key header)",
+      "self_serve_vs_gated": "Gated. Waterfall.io uses a prepaid model where users top up their account balance, and successful matches deduct from this balance. For large volumes, monthly invoices are offered. Accessing the API and obtaining credentials typically requires engaging with their sales team or booking a call, as there is no readily available free tier or self-serve trial for API access.",
+      "api_surface": "Documented REST API. The API documentation is available and details various endpoints for prospecting, contact enrichment, company enrichment, and more. There is no mention of a GraphQL API or an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Potentially buildable as an agent toolkit today. The main blocker is the gated nature of obtaining API credentials. While the API is documented and uses a standard authentication method (API Key), a developer cannot simply sign up and get keys for free or trial use. This would require a sales engagement, which is not ideal for immediate agent toolkit integration.",
+      "evidence_urls": "https://api.waterfall.io/docs/, https://waterfall.io/book-a-call"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 60,
+    "name": "Clay",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Clay is a go-to-market (GTM) intelligence and data enrichment platform that helps sales and marketing teams automate prospecting, personalize outreach, and orchestrate workflows by providing access to a vast data marketplace and AI-powered agentic capabilities.",
+      "auth_methods": "Clay supports JWT authentication for its HTTP API integrations. It also mentions support for API keys and OAuth 2.0, though the primary documented method for programmatic interaction appears to be JWT.",
+      "self_serve_vs_gated": "Clay offers a free plan with limited credits, making it self-serve for basic use and testing. Paid plans (Starter, Explorer, Pro, Enterprise) are required for higher usage and advanced features, with Enterprise requiring a custom quote. Developers can access API keys on the Starter plan and above.",
+      "api_surface": "Clay does not offer a traditional public REST or GraphQL API for direct data access. However, it provides an HTTP API integration that allows programmatic interaction with external APIs, including JWT authentication. It does not appear to have an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Clay could be an agent toolkit today, as it provides infrastructure for data acquisition, agentic workflows, and GTM plays. The main blocker for a fully integrated agent toolkit might be the lack of a direct, comprehensive public API for external systems to programmatically control Clay's core functionalities beyond the HTTP API integration for external services. However, its own 'Claygent' AI agents and workflow orchestration capabilities suggest it's already moving in this direction.",
+      "evidence_urls": "https://clay.com/, https://clay.com/pricing, https://docs.clay.com/docs/http-api-with-jwt-authentication, https://docs.clay.com/docs/http-api, https://docs.clay.com/docs/getting-started/does-clay-have-an-api"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free plan' | Also: 'custom pricing'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 61,
+    "name": "GitHub",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "GitHub is a web-based platform for version control and collaboration, primarily used by software developers to store, manage, and track code changes, and to collaborate on projects.",
+      "auth_methods": "GitHub supports multiple authentication methods, including OAuth2, Personal Access Tokens (PATs), GitHub App tokens, and basic authentication (username/password, though discouraged for production).",
+      "self_serve_vs_gated": "GitHub offers a free tier with unlimited public/private repositories, suitable for individuals and open-source projects. Paid plans (Team, Enterprise) are available for enhanced features, collaboration, and security. API access is generally self-serve, with free tiers and paid options for increased usage and advanced features.",
+      "api_surface": "GitHub provides both a documented REST API and a GraphQL API. There are also mentions of Model Context Protocol (MCP) servers related to GitHub, particularly in the context of AI agents and GitHub Copilot.",
+      "buildability_verdict": "Yes, GitHub could be an agent toolkit today. Its extensive API surface (REST and GraphQL), coupled with various authentication methods and a free tier, makes it accessible for integration. The main blocker for a highly sophisticated agent might be the complexity of managing different authentication models for various use cases and ensuring optimal API rate limit usage, though these are common challenges with large platforms.",
+      "evidence_urls": "https://docs.github.com/en/rest, https://github.com/pricing, https://docs.github.com/en/graphql, https://docs.github.com/en/apps/oauth-apps, https://docs.github.com/en/authentication/keeping-your-api-credentials-secure/about-authentication, https://github.com/buildkite/agent, https://github.com/aws/agent-toolkit-for-aws, https://github.com/blurrah/mcp-graphql, https://github.com/taylor-lindores-reeves/github-projects-mcp-server"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.github.com/en/rest",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 62,
+    "name": "Vercel",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Vercel is a cloud platform for frontend developers to build, deploy, and scale web applications and static sites, with a strong focus on performance and developer experience.",
+      "auth_methods": "Vercel supports authentication via OAuth 2.0 and OpenID Connect (OIDC) through its 'Sign in with Vercel' feature. For application authentication, it supports stateless sessions and JSON Web Tokens (JWTs), with integrations for providers like NextAuth.js, Auth0, and others. For API access, it uses Access Tokens. Two-factor authentication (2FA) is also available via Authenticator App or Passkey.",
+      "self_serve_vs_gated": "Vercel offers a free 'Hobby' plan for personal projects and early experimentation, allowing developers to get started without payment or sales calls. Paid plans (Pro and Enterprise) are available for production applications and teams, with Pro starting at $20 per developer per month.",
+      "api_surface": "Vercel provides a documented REST API for programmatic interaction with user accounts, deployments, domains, secrets, and environment variables. It also supports Model Context Protocol (MCP) servers, which enable LLMs to communicate with external tools and data sources.",
+      "buildability_verdict": "Yes, Vercel could be an agent toolkit today. Vercel has a robust API surface, supports OAuth for authentication, and has a free tier for developers to experiment with. Furthermore, Vercel is actively involved in the AI space with its Model Context Protocol (MCP) and AI SDK, enabling LLMs to interact with Vercel projects and tools. The main blocker would be the complexity of integrating Vercel's specific services and APIs into a general-purpose agent framework, requiring detailed knowledge of Vercel's ecosystem.",
+      "evidence_urls": "https://vercel.com/docs/rest-api, https://vercel.com/docs/security/authentication, https://vercel.com/docs/concepts/deployments/git-integration, https://vercel.com/docs/platform-architecture/serverless-functions, https://vercel.com/docs/ai/ai-gateway, https://vercel.com/docs/ai/model-context-protocol, https://vercel.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (Bearer)",
+      "OAuth2": "OpenAPI Spec (OAuth2)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/vercel.com/0.0.1/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 63,
+    "name": "Netlify",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Netlify is a cloud platform for the modern web that automates builds, deployments, and hosting for web projects. It provides a fully automated continuous deployment pipeline, connecting a Git repository to a global CDN edge network.",
+      "auth_methods": "Netlify uses OAuth 2.0 for authentication. Personal Access Tokens (PATs) can also be generated for manual authentication in shell scripts or commands.",
+      "self_serve_vs_gated": "Netlify offers a free tier ('Free' plan) with core features for individual developers and small projects. Paid plans (Personal, Pro, Enterprise) offer more features, credits, and support, with pricing starting at $9/month for the Personal plan. Credentials for the free tier can be obtained directly from their website.",
+      "api_surface": "Netlify provides a documented REST API for programmatically managing sites, deploys, DNS, and more. They also have an official Netlify Model Context Protocol (MCP) Server, which standardizes how applications provide context to LLMs, making it easier for AI agents to work alongside developers.",
+      "buildability_verdict": "Netlify could be an agent toolkit today. They have launched an official MCP Server, which is designed to make it easier for AI agents to work alongside developers, manage projects, deploy applications, and handle infrastructure using natural language prompts.",
+      "evidence_urls": "https://www.netlify.com/docs/api/ - API Documentation Overview\nhttps://www.netlify.com/pricing/ - Pricing Page"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Signal: 'get started'",
+    "dom_auth": {
+      "OAuth2": "OpenAPI Spec (OAuth2)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/netlify.com/2.15.0/swagger.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 64,
+    "name": "Cloudflare",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Cloudflare is a web infrastructure and security company that provides a suite of services including a Content Delivery Network (CDN), DDoS mitigation, DNS management, SSL/TLS encryption, and a Web Application Firewall (WAF) to enhance the performance, security, and reliability of websites and applications.",
+      "auth_methods": "Cloudflare's API supports authentication via API Keys and API Tokens. OAuth 2.0 is also used for authorizing access to Cloudflare services, particularly in the context of MCP servers.",
+      "self_serve_vs_gated": "Cloudflare offers a generous free plan that provides basic features for performance, security, and serverless computing, allowing developers to get started without immediate cost. Paid plans are available for more advanced features and higher usage limits, with custom pricing for enterprise solutions. Students can also access free developer features for a limited period.",
+      "api_surface": "Cloudflare provides a comprehensive RESTful API (API v4) for programmatic access to its services. They also offer a GraphQL Analytics API. Cloudflare has also developed and supports the Model Context Protocol (MCP) for AI agents to interact with its services, including a dedicated Cloudflare API MCP server.",
+      "buildability_verdict": "Yes, Cloudflare can be an agent toolkit today. It offers a robust API surface, supports modern authentication methods, and has actively embraced AI agent integration through its MCP server offerings and temporary account features for frictionless deployment.",
+      "evidence_urls": "https://www.cloudflare.com/pricing/, https://developers.cloudflare.com/api/, https://www.cloudflare.com/developer-platform/workers/pricing/"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Gated",
+    "dom_self_serve_evidence": "Signal: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://developers.cloudflare.com/api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 65,
+    "name": "Supabase",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Supabase is a Backend-as-a-Service (BaaS) platform that provides developers with a suite of tools built around a PostgreSQL database, enabling faster development and scaling without the complexity of managing servers.",
+      "auth_methods": "Supabase supports various authentication methods including email/password, magic links, one-time passwords (OTP), social logins (OAuth providers like Google and GitHub), phone login, Passkey, custom OAuth/OIDC providers, anonymous sign-ins, and Web3 (Ethereum or Solana).",
+      "self_serve_vs_gated": "Supabase offers a free tier with limitations (e.g., project pause after inactivity, limited storage and MAUs) and paid tiers (Pro, Team, Enterprise) that provide more resources and features. Developers can sign up and start with the free tier immediately, making it self-serve.",
+      "api_surface": "Supabase provides a documented REST API auto-generated from the database schema using PostgREST. It also offers a documented GraphQL API through the pg_graphql extension. Additionally, Supabase has an MCP (Model Context Protocol) server for AI integrations.",
+      "buildability_verdict": "Yes, Supabase could be an agent toolkit today. It has a well-documented API surface (REST and GraphQL) and has implemented an MCP server, which is designed to standardize communication between AI tools and platforms like Supabase. The existing MCP server and its integration capabilities with AI tools like Cursor and Claude indicate strong potential for agent toolkit development.",
+      "evidence_urls": "https://supabase.com/docs/guides/api, https://supabase.com/docs/guides/auth, https://supabase.com/pricing, https://supabase.com/docs/guides/graphql, https://supabase.com/docs/guides/integrations/ai/mcp"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'request a demo'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://supabase.com/docs/guides/api",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 66,
+    "name": "Neo4j",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Neo4j is a graph database management system that analyzes and manages connected data, enabling users to discover patterns and relationships within their data that traditional databases might miss.",
+      "auth_methods": "Neo4j supports multiple authentication methods, including Basic Authentication (username/password, LDAP), Bearer tokens (OAuth/OIDC), Kerberos, and custom authentication tokens.",
+      "self_serve_vs_gated": "Neo4j offers a free tier (AuraDB Free) for learning and exploration, as well as paid plans (AuraDB Professional, Business Critical) for production use. A free trial is available for AuraDB Professional.",
+      "api_surface": "Neo4j provides a documented REST API (though the transactional HTTP API is deprecated and superseded by the Query API) and supports GraphQL APIs through the Neo4j GraphQL Library. It also has an implementation for the Model Context Protocol (MCP).",
+      "buildability_verdict": "Yes, Neo4j can be an agent toolkit today. Its support for the Model Context Protocol (MCP) directly enables integration with AI agents, allowing them to query and interact with graph data conversationally.",
+      "evidence_urls": "https://neo4j.com/docs/rest-api/, https://neo4j.com/docs/graphql-manual/, https://neo4j.com/docs/operations-manual/current/security/authentication-authorization/, https://neo4j.com/pricing/, https://neo4j.com/docs/mcp/current/, https://neo4j.com/docs/graphql-manual/current/getting-started/overview/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY, S2S_OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://neo4j.com/docs/rest-api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 67,
+    "name": "Snowflake",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Snowflake is a cloud-based data warehousing platform that provides a scalable and flexible environment for storing, processing, and analyzing large datasets. It offers a unified platform for data engineers, data scientists, and data analysts to collaborate and derive insights from data.",
+      "auth_methods": "Snowflake supports multiple authentication methods, including OAuth2, Key-Pair Authentication, Username and Password (with MFA), Programmatic Access Tokens (PATs), Workload Identity Federation (WIF), and Single Sign-On (SSO) through external identity providers like Okta and Azure AD.",
+      "self_serve_vs_gated": "Snowflake offers a free trial, allowing developers to get credentials and explore the platform's capabilities without immediate commitment. However, for full access to advanced features and enterprise-grade services, paid plans are required. Pricing is consumption-based, with different editions offering varying levels of functionality.",
+      "api_surface": "Snowflake provides a comprehensive set of documented REST APIs, including the Snowflake SQL API, Account API, Database API, and various Cortex AI APIs. It also supports the Model Context Protocol (MCP) with a managed MCP server, enabling AI agents to securely interact with Snowflake data.",
+      "buildability_verdict": "Yes, Snowflake can be an agent toolkit today. Its robust API surface, support for MCP, and comprehensive authentication methods make it well-suited for integration with AI agents. The availability of managed MCP servers further simplifies the process of connecting AI agents to Snowflake data without requiring separate infrastructure.",
+      "evidence_urls": "https://docs.snowflake.com/en/index.html, https://www.snowflake.com/pricing/"
+    },
+    "composio_baseline": {
+      "auth_methods": "BASIC",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'talk to sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.snowflake.com/en/index.html",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 68,
+    "name": "MongoDB Atlas",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Database as a Service - A fully managed, multi-cloud database service that simplifies deploying, managing, and scaling MongoDB databases.",
+      "auth_methods": "API Keys, OAuth2, Basic Authentication (username/password), X.509 certificates, AWS IAM Role Authentication, Federated Authentication (SAML 2.0, OIDC), LDAP, Multi-Factor Authentication (MFA)",
+      "self_serve_vs_gated": "Self-serve with a free tier available; paid plans offer more resources and features.",
+      "api_surface": "REST API (Atlas Administration API, Atlas Embedding and Reranking API, Data API), GraphQL API (via integrations like Hasura), SDKs (Go), CLI tools, Terraform Provider.",
+      "buildability_verdict": "Yes, it can be an agent toolkit today. The Atlas Administration API and Data API provide programmatic access for management and data operations.",
+      "evidence_urls": "https://www.mongodb.com/docs/atlas/, https://www.mongodb.com/docs/atlas/api/, https://www.mongodb.com/docs/atlas/api/data-api/, https://www.mongodb.com/docs/atlas/billing/pricing/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free forever' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://www.mongodb.com/docs/atlas/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 69,
+    "name": "Datadog",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Datadog is a monitoring and observability platform that collects, visualizes, and correlates metrics, logs, events, and traces via a REST API.",
+      "auth_methods": "API Key, Application Key, OAuth2, Personal Access Tokens (PATs), Service Access Tokens (SATs), Workload Identity Federation.",
+      "self_serve_vs_gated": "Datadog offers a 14-day free trial.",
+      "api_surface": "REST API. The API surface is broad, covering metrics, logs, monitors, dashboards, events, security monitoring, cloud cost management, and more.",
+      "buildability_verdict": "Yes, Datadog can be integrated with agent toolkits. The Datadog Agent is compatible with various platforms and can be extended with custom checks.",
+      "evidence_urls": "https://docs.datadoghq.com/api/, https://www.datadoghq.com/pricing/, https://docs.datadoghq.com/getting_started/agent/, https://docs.datadoghq.com/security/api_security/, https://docs.datadoghq.com/account_management/api_keys/, https://docs.datadoghq.com/authentication/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {
+      "OAuth2": "oauth2",
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://docs.datadoghq.com/api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 70,
+    "name": "Sentry",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Application performance monitoring and error tracking software that helps software teams discover, triage, and prioritize errors in real-time.",
+      "auth_methods": "OAuth2 (device flow and authorization code grant type), API Keys, Auth Tokens (Organization Tokens, Personal Tokens, Internal Integrations), Environment Variables (SENTRY_AUTH_TOKEN, SENTRY_TOKEN, SENTRY_URL, etc.), and Basic Authentication (implied via API Key usage).",
+      "self_serve_vs_gated": "Sentry offers a free Developer plan with limited error volume and users. Paid plans (Team, Business, Enterprise) are available with higher quotas and additional features, starting at $26/month. A 14-day free trial is available for paid features.",
+      "api_surface": "Yes, Sentry provides a documented REST API (v0, considered draft phase) and has an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, Sentry could be an agent toolkit today. Its existing MCP server and agent skills provide a foundation for AI-driven workflows, allowing AI coding assistants to interact with Sentry data for debugging and issue resolution.",
+      "evidence_urls": "https://sentry.io/, https://docs.sentry.io/api/, https://docs.sentry.io/pricing/, https://docs.sentry.io/platforms/python/data-management/data-collected/, https://docs.sentry.io/platforms/javascript/guides/node/integrations/mcp/, https://docs.sentry.io/product/integrations/integration-platform/, https://docs.sentry.io/platforms/python/ai/agents/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'free trial'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.sentry.io/api/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 71,
+    "name": "Notion",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Productivity and note-taking application that serves as a workspace for notetaking, knowledge management, data organization, and project and task tracking.",
+      "auth_methods": "OAuth2, API Key (Internal Integration Token), Personal Access Tokens (PATs), Bearer Tokens.",
+      "self_serve_vs_gated": "Self-serve. Developers can obtain credentials (API tokens) for free through the Notion Integrations page, without requiring a paid plan or sales call.",
+      "api_surface": "Documented REST API. Notion does not appear to have a documented GraphQL API. There are existing Model Context Protocol (MCP) servers for Notion.",
+      "buildability_verdict": "Yes, Notion could be an agent toolkit today. The main blocker, if any, would be the potential for API rate limits to impact agent performance in high-usage scenarios, although Notion's API is generally well-documented and accessible.",
+      "evidence_urls": "https://www.notion.so/help/api-overview, https://developers.notion.com/, https://www.notion.so/my-integrations, https://www.notion.so/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free plan' | Also: 'contact sales'",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0",
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.notion.com/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 72,
+    "name": "Airtable",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Airtable is a cloud-based platform that combines the simplicity of a spreadsheet with the power of a database, offering a flexible way to organize, collaborate on, and visualize data.",
+      "auth_methods": "Personal Access Token (PAT), OAuth2",
+      "self_serve_vs_gated": "Developers can get started with a free plan which includes API access, though there are limits on API calls and records per base. Higher tiers with more generous limits and features are available via paid plans, with enterprise-level pricing available upon request.",
+      "api_surface": "REST API for data operations (CRUD) and a Metadata API for schema information. It supports webhooks. There is no mention of a GraphQL API. The breadth covers data manipulation, schema management, and enterprise-level administrative functions.",
+      "buildability_verdict": "Yes, Airtable can be an agent toolkit today. The primary blocker for extensive use might be the API rate limits (5 requests per second per base) and record limits per base, which can be managed with careful design and by leveraging higher-tier plans.",
+      "evidence_urls": "https://airtable.com/developers, https://support.airtable.com/docs/API-reference, https://support.airtable.com/docs/Managing-API-call-limits-in-Airtable, https://support.airtable.com/docs/Creating-personal-access-tokens, https://airtable.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free plan' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://support.airtable.com/docs/Managing-API-call-limits-in-Airtable",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 73,
+    "name": "Linear",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Project Management & Issue Tracking - A modern, fast, and opinionated tool for software teams to plan, organize, and track their work.",
+      "auth_methods": "OAuth2, API Key",
+      "self_serve_vs_gated": "Self-serve (Free plan available with limitations, paid plans start at $10/user/month)",
+      "api_surface": "GraphQL API. Broad surface area covering issues, projects, users, etc. MCP server exists.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The main blocker would be the breadth of specific business logic an agent might need to implement, not API access.",
+      "evidence_urls": "https://developers.linear.app/, https://linear.app/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'get started' | Also: 'contact sales'",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0",
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": true,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.linear.app/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 74,
+    "name": "Jira",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Jira is a software product developed by Atlassian used for issue tracking, bug tracking, and agile project management. It helps teams plan, track, and manage their work, particularly those using Agile methodologies.",
+      "auth_methods": "Jira supports OAuth 2.0 (recommended), Personal Access Tokens (PATs), and Basic authentication (for scripts/bots). Cookie-based authentication is used in the browser. OAuth 1.0a is deprecated.",
+      "self_serve_vs_gated": "Jira offers a free plan for up to 10 users with basic features. Paid plans (Standard, Premium, Enterprise) require subscriptions starting from $7.91/user/month, with Enterprise offering custom pricing. Developers can obtain credentials for free/trial versions, but advanced features and higher user limits require paid plans.",
+      "api_surface": "Jira offers a well-documented REST API for both Jira Cloud and Jira Data Center. There is also an Atlassian platform GraphQL API that can access Jira data. While there isn't a widely documented 'Model Context Protocol (MCP) server' directly from Atlassian for general use, Atlassian does offer an official Rovo MCP Server for Atlassian Cloud products, which acts as a bridge for AI tools to access Jira data. Community-built MCP servers also exist for Jira Data Center.",
+      "buildability_verdict": "Yes, Jira could be an agent toolkit today. The primary blocker would be the complexity of managing API rate limits and ensuring proper scope and permission handling for AI agents interacting with Jira data, especially when considering write operations. The existence of MCP servers and robust REST/GraphQL APIs provides a strong foundation for integration.",
+      "evidence_urls": "https://www.atlassian.com/software/jira/pricing, https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/, https://developer.atlassian.com/cloud/jira/platform/graphql/, https://developer.atlassian.com/cloud/jira/service-management/docs/authentication/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY, S2S_OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "OAuth2": "OpenAPI Spec (OAuth2)",
+      "Basic": "OpenAPI Spec (Basic)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/atlassian.com/jira/1001.0.0-SNAPSHOT/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 75,
+    "name": "Asana",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Project Management - A work management platform that helps teams organize, track, and manage their work.",
+      "auth_methods": "OAuth2, Personal Access Token (PAT), OpenID Connect",
+      "self_serve_vs_gated": "Self-serve for basic API access via Personal Access Tokens. OAuth2 requires app registration. Enterprise features may require sales consultation.",
+      "api_surface": "REST API. Comprehensive breadth covering tasks, projects, users, etc. MCP server exists.",
+      "buildability_verdict": "Yes, Asana can be an agent toolkit today. The primary blocker would be the breadth of the API surface, requiring significant effort to fully integrate all relevant endpoints for complex agentic workflows.",
+      "evidence_urls": "https://developers.asana.com/docs, https://asana.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'free forever' | Also: 'contact sales'",
+    "dom_auth": {
+      "OAuth2": "OpenAPI Spec (OAuth2)",
+      "API_Key": "OpenAPI Spec (Bearer)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/asana.com/1.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 76,
+    "name": "Monday.com",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Work OS (Work Operating System) / Project Management: monday.com is a flexible platform that allows teams to create and shape their own workflows, manage projects, and collaborate effectively.",
+      "auth_methods": "OAuth2, API Token (Personal V2 API tokens, short-lived tokens), JWT for webhook verification.",
+      "self_serve_vs_gated": "Self-serve. A free plan is available for individuals, and developers can sign up for a free developer account with full API access. Paid plans are available for teams with advanced features.",
+      "api_surface": "Documented REST and GraphQL API. Supports Model Context Protocol (MCP) servers for AI integrations.",
+      "buildability_verdict": "Yes, this could be an agent toolkit today. The main blocker is not a blocker, as monday.com has a well-documented GraphQL API, supports OAuth2 and API tokens for authentication, and even offers MCP servers for AI integrations, making it highly accessible for developers.",
+      "evidence_urls": "https://www.monday.com/, https://developer.monday.com/api-reference, https://developer.monday.com/api-reference/docs/authentication, https://developer.monday.com/api-reference/docs/model-context-protocol, https://developer.monday.com/api-reference/docs/platform-mcp, https://developer.monday.com/api-reference/docs/execute-api-query, https://developer.monday.com/api-reference/docs/the-basics, https://developer.monday.com/api-reference/docs/platform-api, https://developer.monday.com/api-reference/docs/manage-user-tokens-and-credentials, https://developer.monday.com/api-reference/docs/external-apis, https://www.monday.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'get a quote'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developer.monday.com/api-reference",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 77,
+    "name": "ClickUp",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Project Management Software: ClickUp is an all-in-one productivity platform designed to replace multiple workplace applications, offering features for task management, document collaboration, goal tracking, and chat.",
+      "auth_methods": "OAuth 2.0 and Personal API Tokens.",
+      "self_serve_vs_gated": "Self-serve for API access. Developers can obtain personal API tokens from their account settings on any plan, including the Free Forever plan. OAuth app creation is also available for all plans, with Workspace owners or admins managing integration settings.",
+      "api_surface": "ClickUp offers a documented REST API (v2 and v3). There is also a Model Context Protocol (MCP) server available, which is currently in public beta.",
+      "buildability_verdict": "Yes, ClickUp could be an agent toolkit today. The main blocker is not a lack of API surface, but rather the potential for 'glue code' required due to some API documentation gaps and quirky webhook behavior, as noted by developers who have integrated with ClickUp.",
+      "evidence_urls": "https://clickup.com/api, https://clickup.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free plan' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://clickup.com/api",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 78,
+    "name": "Coda",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Coda is a collaborative workspace that combines documents, spreadsheets, and databases into a single, customizable platform, allowing teams to build interactive applications and automate workflows without coding.",
+      "auth_methods": "Coda API uses Bearer token authentication. OAuth2 is also supported for Coda MCP connections with certain AI clients.",
+      "self_serve_vs_gated": "The Coda API is available free of charge for all users, across both free and paid workspaces. API usage is subject to the user's role within the workspace. Generating API tokens is a self-serve process via account settings.",
+      "api_surface": "Coda offers a documented RESTful API for programmatic access to docs, pages, tables, and rows. It also has a Model Context Protocol (MCP) server, optimized for AI/LLM usage patterns.",
+      "buildability_verdict": "Yes, Coda can be an agent toolkit today. The main blocker for broader adoption might be the learning curve associated with its formula language for complex automations, although the API and MCP server provide direct programmatic access.",
+      "evidence_urls": "https://coda.io/apis/v1, https://coda.io/pricing, https://developer.coda.com/docs/getting-started, https://super.superhuman.com/hc/en-us/articles/16679947070741-Connect-to-the-Coda-MCP"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (ApiKey)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/codat.io/accounting/2.1.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 79,
+    "name": "Smartsheet",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Work Management and Collaboration Platform: Smartsheet is a SaaS platform that combines spreadsheet-style sheets with project management, Gantt charts, dashboards, forms, and workflow automation to help teams manage projects and collaborate effectively.",
+      "auth_methods": "OAuth 2.0 and API Keys (Personal Access Tokens).",
+      "self_serve_vs_gated": "Developers can access API documentation and get started with a free trial. However, full API access and certain features like the MCP server are restricted to Business and Enterprise plans. Registration for developer tools requires an existing licensed Smartsheet user on a Business plan or higher.",
+      "api_surface": "Smartsheet offers a documented REST API. There is also a conceptual GraphQL schema available, and a Model Context Protocol (MCP) server for AI integrations.",
+      "buildability_verdict": "Yes, Smartsheet could be an agent toolkit today. The main blocker for full potential would be ensuring that all desired functionalities are accessible via the API and that the MCP server supports all necessary operations for complex agentic workflows.",
+      "evidence_urls": "https://developers.smartsheet.com/api, https://www.smartsheet.com/pricing, https://smartsheet.redoc.ly, https://developers.smartsheet.com/smartsheet-mcp-server-introduction, https://www.smartsheet.com/free-trial"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'try for free' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 80,
+    "name": "Harvest",
+    "in_composio": true,
+    "source": "Failed",
+    "gemini_data": {
+      "category_and_description": "Failed to research",
+      "auth_methods": "Unknown",
+      "self_serve_vs_gated": "Unknown",
+      "api_surface": "Unknown",
+      "buildability_verdict": "Unknown",
+      "evidence_urls": "Unknown"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Skipped (no Gemini data)",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "none"
+  },
+  {
+    "id": 81,
+    "name": "Stripe",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Stripe is a financial infrastructure platform for businesses, offering a suite of products for online payments, billing, and other financial services.",
+      "auth_methods": "API Key, OAuth2",
+      "self_serve_vs_gated": "Self-serve for core features, with options for paid plans and enterprise solutions.",
+      "api_surface": "REST API. Broad surface area covering payments, billing, Connect, Radar, etc. MCP server exists.",
+      "buildability_verdict": "Yes, Stripe can be an agent toolkit today. Its comprehensive API and developer-friendly documentation make it readily integrable.",
+      "evidence_urls": "https://stripe.com/docs/api, https://stripe.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'try for free' | Also: 'contact sales'",
+    "dom_auth": {
+      "Basic": "OpenAPI Spec (Basic)",
+      "API_Key": "OpenAPI Spec (Bearer)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/stripe.com/2022-11-15/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 82,
+    "name": "Plaid",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Financial Technology (Fintech) Infrastructure: Plaid provides a platform that enables applications to securely connect to users' bank and financial accounts, allowing access to data such as transactions, balances, and identity information for various financial use cases.",
+      "auth_methods": "Plaid primarily uses API keys (client_id and secret) for server-to-server authentication. For user authentication within applications, it supports OAuth as the preferred method, with legacy support for Multi-Factor Authentication (MFA) and One-Time Passwords (OTP).",
+      "self_serve_vs_gated": "Plaid offers a free trial with limited access (10 Items) and a 'Pay-as-you-go' plan suitable for hobbyists and early-stage businesses, allowing developers to get started without immediate payment. However, for full access to all products, higher usage, and business-focused features like SSO and a personal account manager, paid plans ('Growth' and 'Custom/Scale') with minimum spend and annual commitments are required. Access to production API keys is granted after signup and acknowledging terms, but production use and higher limits necessitate moving beyond the free trial.",
+      "api_surface": "Plaid offers a well-documented REST API. It also has an existing Model Context Protocol (MCP) server, specifically the Dashboard MCP server, which provides production diagnostics and analytics tools for AI integration. There is also a local MCP server for development purposes as part of the Plaid AI coding toolkit.",
+      "buildability_verdict": "Yes, Plaid could be an agent toolkit today. The main blocker, if any, would be the complexity of integrating with the full breadth of Plaid's products and handling the nuances of real-world financial data and edge cases, which requires specialized knowledge (often referred to as a 'Plaid developer').",
+      "evidence_urls": "https://plaid.com/pricing/, https://plaid.com/docs/api/, https://plaid.com/docs/api/auth/, https://plaid.com/docs/api/mcp/"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Signal: 'sign up'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (ApiKey)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/plaid.com/2020-09-14_1.334.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 83,
+    "name": "Binance",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Cryptocurrency Exchange - Binance is a global cryptocurrency exchange that provides a platform for users to trade a wide range of digital assets, offering services such as spot trading, futures trading, margin trading, and more.",
+      "auth_methods": "API Key (HMAC-based request signing, RSA, Ed25519), OAuth2, Session-based authentication (for selected WebSocket and FIX workflows).",
+      "self_serve_vs_gated": "Self-serve. Developers can create API keys directly from their Binance account management page after completing KYC verification. There is no mention of paid plans or sales calls being required for basic API access.",
+      "api_surface": "Yes, Binance offers a documented REST API. There is also mention of an existing Model Context Protocol (MCP) server, which facilitates integration with AI development tools.",
+      "buildability_verdict": "Yes, Binance could be an agent toolkit today. The main blocker, if any, would be understanding the specific API endpoints and their rate limits for complex agent behaviors, but the existence of an MCP server indicates strong support for AI agent integration.",
+      "evidence_urls": "https://www.binance.com/en/developers/documentation, https://www.binance.com/en/developers/api-management, https://www.binance.com/en/developers/oauth, https://github.com/TermiX-official/binance-mcp, https://explainx.ai/mcp-servers/binance"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 84,
+    "name": "Paygent Connect",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "AI Agent Monetization and Billing Platform: Paygent Connect provides a platform for businesses to monetize their AI agents by tracking costs, usage, and profit, and automating billing and invoicing based on AI system performance.",
+      "auth_methods": "API Key (Bearer token in Authorization header). A product API key is generated upon product creation via a POST request to the /products endpoint.",
+      "self_serve_vs_gated": "Self-serve with a free beta period. Developers can sign up for a Paygent account and get an API key to start. Pricing details are not explicitly stated as requiring a paid plan or sales call for initial access, and the beta period is free.",
+      "api_surface": "Documented REST API. Paygent's backend exposes a REST API for managing products, plans, users, subscriptions, and usage events. There is no mention of an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, this could be an agent toolkit today. The main blocker is the lack of a documented Model Context Protocol (MCP) server. While Paygent has a robust API for managing AI agent costs and billing, direct integration with AI models via MCP would require Paygent to either implement an MCP server or provide clear documentation on how their system can act as one.",
+      "evidence_urls": "https://docs.paygent.to/api-reference/backend-api, https://paygent.to/pricing, https://docs.paygent.to/getting-started/quickstart, https://docs.paygent.to/reference/backend-api/products, https://docs.paygent.to/reference/backend-api/config/plans"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'sign up free' | Also: 'talk to us'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.paygent.to/getting-started/quickstart",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 85,
+    "name": "iPayX",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Payment processing and revenue cycle management for B2B and healthcare sectors. Offers invoicing, bill presentment, customer communication, and multi-channel payment acceptance.",
+      "auth_methods": "API Key",
+      "self_serve_vs_gated": "Gated (requires sales inquiry for API access)",
+      "api_surface": "REST API (limited public information on breadth)",
+      "buildability_verdict": "No, information on API capabilities and access is not readily available for self-serve integration.",
+      "evidence_urls": "https://www.ipayx.com/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 86,
+    "name": "QuickBooks",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Accounting Software - Cloud-based accounting software for small and medium-sized businesses, offering features like invoicing, expense tracking, payroll, and financial reporting.",
+      "auth_methods": "OAuth 2.0",
+      "self_serve_vs_gated": "Self-serve (developers can sign up for a free Intuit Developer account and access sandbox environments and API keys)",
+      "api_surface": "REST API. The API covers a broad range of entities including customers, invoices, bills, and financial accounts. A 'query' endpoint exists that uses a SQL-like syntax.",
+      "buildability_verdict": "Yes, it can be an agent toolkit today. The main blocker would be the complexity of the SQL-like query language for certain operations and the short lifespan of access tokens (1 hour), requiring robust token management.",
+      "evidence_urls": "https://developer.intuit.com/, https://quickbooks.intuit.com/, https://www.tech.co/news/quickbooks-online-pricing, https://www.merchantmaverick.com/quickbooks-online-pricing/"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'start for free'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 87,
+    "name": "Xero",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Accounting Software - Cloud-based accounting software for small and medium-sized businesses.",
+      "auth_methods": "OAuth 2.0",
+      "self_serve_vs_gated": "Free developer account to get started; tiered pricing based on API usage and connections (effective March 2026).",
+      "api_surface": "REST API. Multiple APIs including Accounting and Payroll. MCP server exists.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The main blocker would be understanding and managing the tiered pricing model and potential data egress costs, especially for high-volume usage.",
+      "evidence_urls": "https://developer.xero.com/documentation/api/api-overview, https://developer.xero.com/pricing, https://developer.xero.com/documentation/guides/oauth2/overview"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Signal: 'sign up'",
+    "dom_auth": {
+      "Basic": "OpenAPI Spec (Basic)",
+      "OAuth2": "OpenAPI Spec (OAuth2)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/xero.com/xero-identity/2.9.4/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 88,
+    "name": "Brex",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Brex is a financial technology platform offering corporate cards, spend management, bill pay, and business banking, designed to help startups and growing companies automate financial operations and control spending.",
+      "auth_methods": "Brex API supports OAuth 2.0 for partner applications and user tokens (API keys) for first-party account access.",
+      "self_serve_vs_gated": "Developers can generate API tokens from their Brex dashboard, indicating a self-serve approach for accessing their own account data. However, for partner applications requiring access to other companies' Brex accounts, OAuth 2.0 is used, which may involve a more involved integration process.",
+      "api_surface": "Brex offers a documented REST API. They also support Model Context Protocol (MCP) for AI integrations. There is no mention of a GraphQL API or a pre-existing MCP server provided by Brex, but rather an MCP server that developers can deploy.",
+      "buildability_verdict": "Yes, Brex could be an agent toolkit today. The main blocker for seamless integration with AI agents is the operational complexity of managing OAuth tokens, rate limits, and Brex's specific API schema quirks, which are addressed by using an MCP server.",
+      "evidence_urls": "https://brex.com/, https://developer.brex.com/, https://brex.com/pricing"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'get started' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (ApiKey)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/brex.io/2021.12/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 89,
+    "name": "Ramp",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Finance Automation Platform - A platform that combines corporate cards, expense management, bill payments, and accounting integrations to help businesses control spend, automate finance tasks, and gain visibility into expenses.",
+      "auth_methods": "OAuth2, API Key (Client ID/Secret)",
+      "self_serve_vs_gated": "Self-serve for basic API credentials (Client ID/Secret) with admin access. Sandbox access requires contacting an account manager. Production access for partner applications requires a review process.",
+      "api_surface": "REST API. Offers a broad range of endpoints covering transactions, cards, users, bills, accounting, and more. A sandbox environment is available. MCP (Multi-Cloud Platform) exists for AI agent integrations.",
+      "buildability_verdict": "Yes, this can be an agent toolkit today. The API is well-documented, supports OAuth2 and client credentials for authentication, and provides a sandbox environment for testing. The existence of MCP further supports AI agent integration.",
+      "evidence_urls": "https://ramp.com/developer-api, https://ramp.com/pricing, https://developer.ramp.com/docs/authorization, https://developer.ramp.com/docs/quickstart, https://developer.ramp.com/docs/ramp-mcp"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "Free: 'start for free' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "OpenAPI Spec (ApiKey)"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://api.apis.guru/v2/specs/apisetu.gov.in/mizorampolice/3.0.0/openapi.json",
+    "dom_confidence": "high (OpenAPI 100%)"
+  },
+  {
+    "id": 90,
+    "name": "PitchBook",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Financial Data Platform - Provides comprehensive data on private and public markets, venture capital, private equity, and M&A.",
+      "auth_methods": "API Key (PB-Token)",
+      "self_serve_vs_gated": "Gated - Requires a sales call and a separate contract agreement. API access is an add-on to a PitchBook Platform subscription and is priced separately.",
+      "api_surface": "REST API. Offers various relational endpoints for financing details, deal stock information, and VC exit predictor data. MCP server is not explicitly mentioned.",
+      "buildability_verdict": "No, due to the gated nature and requirement for a sales call and contract. The primary blocker is the lack of self-serve credentials and the need for a paid, negotiated contract.",
+      "evidence_urls": "https://www.pitchbook.com/api, https://www.pitchbook.com/direct-data/api, https://postman.com/pitchbook/workspace/pitchbook-api-v2/overview, https://www.pitchbook.com/pricing"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 91,
+    "name": "NotebookLM",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "AI-powered research and writing assistant that helps users organize, summarize, and synthesize information from uploaded sources.",
+      "auth_methods": "Google Account / OAuth2 (for Enterprise)",
+      "self_serve_vs_gated": "Self-serve (free tier available), with paid tiers and enterprise options.",
+      "api_surface": "REST API (Enterprise only, documented in Google Cloud docs), unofficial Python wrappers exist.",
+      "buildability_verdict": "Limited. The official API is enterprise-only. Unofficial wrappers may be unstable or violate terms of service. An MCP server exists for agent integration.",
+      "evidence_urls": "https://notebooklm.google.com/, https://cloud.google.com/vertex-ai-search/docs/notebooklm/create-manage-notebooks, https://github.com/gnh1201/notebooklm-rest-api, https://github.com/jacob-bd/notebooklm-mcp-cli"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'create account'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://cloud.google.com/vertex-ai-search/docs/notebooklm/create-manage-notebooks",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 92,
+    "name": "Otter AI",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Otter.ai is a voice-to-text transcription software that uses artificial intelligence to record, transcribe, and summarize meetings and conversations.",
+      "auth_methods": "Otter.ai's Public API uses Bearer token authentication, which requires an API key generated from the developer dashboard. Client credentials and HTTP Basic Auth are also supported for token generation.",
+      "self_serve_vs_gated": "Otter.ai offers a free Basic plan with limited transcription minutes. Access to the Public API is available for Enterprise customers and requires contacting an account manager to enable access.",
+      "api_surface": "Otter.ai provides a documented REST API with endpoints for managing conversations, channels, workspaces, and audio downloads. They also support webhooks for real-time notifications and have an existing Model Context Protocol (MCP) server.",
+      "buildability_verdict": "Yes, Otter.ai could be an agent toolkit today. The main blocker is that while the API is documented and supports MCP, access to the full public API is gated for Enterprise customers, requiring contact with an account manager.",
+      "evidence_urls": "https://help.otter.ai/hc/en-us/articles/1260803009707-Public-API-, https://otter.ai/pricing, https://help.otter.ai/hc/en-us/articles/4407902717588-API-Reference, https://help.otter.ai/hc/en-us/articles/1260803009707-Public-API-"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve",
+    "dom_self_serve_evidence": "Signal: 'start for free'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 93,
+    "name": "Fathom",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "AI-powered meeting assistant that records, transcribes, and summarizes video calls.",
+      "auth_methods": "API Key, OAuth2, SSO (Google, Microsoft)",
+      "self_serve_vs_gated": "Freemium model with free tier for individuals; paid tiers (Premium, Team, Business, Enterprise) for advanced features and team collaboration. Enterprise requires sales contact.",
+      "api_surface": "REST API, gRPC (via SDKs). Offers endpoints for meetings, summaries, transcripts, highlights, and webhooks. An MCP server is available.",
+      "buildability_verdict": "Yes, Fathom can be used as an agent toolkit today. The primary blocker for advanced use cases might be understanding the full scope and limitations of the public API and potential rate limits.",
+      "evidence_urls": "https://fathom.video/pricing, https://docs.fathom.ai/, https://trust.fathom.video/faq, https://github.com/trevorwelch/fathom-video-mcp"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2, API_KEY",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'contact sales'",
+    "dom_auth": {
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://docs.fathom.ai/",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 94,
+    "name": "Consensus",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Consensus is an AI-powered search engine for academic research, designed to help users find, understand, and synthesize peer-reviewed literature.",
+      "auth_methods": "API Key / OAuth2 (implied by institutional access)",
+      "self_serve_vs_gated": "Gated for API access (application required), but has free and paid tiers for individual use.",
+      "api_surface": "REST API (MCPAPI Reference available). Supports OpenAPI.",
+      "buildability_verdict": "Yes, can be used as an agent toolkit. The API provides access to a vast index of research papers and allows for structured output generation.",
+      "evidence_urls": "https://docs.consensus.app/llms.txt, https://www.consensus.app/pricing, https://www.consensus.app/build"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://docs.consensus.app/llms.txt",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 95,
+    "name": "Reducto",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Document Intelligence Platform - Automates document workflows and extracts structured data from unstructured documents like PDFs, spreadsheets, and scanned files for AI applications.",
+      "auth_methods": "API Key",
+      "self_serve_vs_gated": "Self-serve with a free account and API key generation. Offers free credits on the Standard plan.",
+      "api_surface": "REST API. Offers core functions like Parse, Extract, Split, and Edit. Supports SDKs for Python, Node.js, and Go. An MCP server is available for agent tool calling.",
+      "buildability_verdict": "Yes, it can be used as an agent toolkit today. The main blocker would be the need to manage API keys and potentially integrate with their SDKs or REST API.",
+      "evidence_urls": "https://studio.reducto.ai/, https://platform.reducto.ai/, https://cdn.reducto.ai/samples/fidelity-example.pdf"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'try for free' | Also: 'contact sales'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": true,
+    "dom_docs_url_verified": "https://docs.reducto.ai",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 96,
+    "name": "Devin",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "AI Software Engineer - An autonomous AI agent that plans, codes, tests, debugs, and deploys software end-to-end.",
+      "auth_methods": "Service User API Key, Personal Access Token (PAT)",
+      "self_serve_vs_gated": "Self-serve with Free, Pro, Max, Team, and Enterprise plans. Some plans require sales contact (Enterprise).",
+      "api_surface": "REST API. Supports Organization and Enterprise API scopes. MCP server exists for programmatic access to platform capabilities.",
+      "buildability_verdict": "Yes, Devin can be used as an agent toolkit today. Its API and MCP server allow integration into existing workflows and custom agent development. The main blocker for broader adoption might be the complexity of managing secrets and ensuring security best practices for autonomous agents.",
+      "evidence_urls": "https://devin.ai/pricing, https://docs.devin.ai/docs/authentication, https://docs.devin.ai/docs/api-overview, https://docs.devin.ai/docs/mcp-overview"
+    },
+    "composio_baseline": {
+      "auth_methods": "API_KEY",
+      "self_serve_vs_gated": "Bring your own credentials",
+      "api_surface": "MCP: Yes (model-context-protocol)"
+    },
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free plan' | Also: 'contact us'",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 97,
+    "name": "Higgsfield",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "AI Video and Image Generation - A platform for creating and editing visual content using AI models.",
+      "auth_methods": "API Key (via MindCloud or direct Higgsfield account)",
+      "self_serve_vs_gated": "Self-serve with free/trial tiers, paid plans available.",
+      "api_surface": "REST API (via MindCloud Universal API or direct Higgsfield API). Supports image and video generation, character creation, and more. MCP server exists.",
+      "buildability_verdict": "Yes, can be an agent toolkit today. The primary blocker would be the credit system and potential cost management for extensive use.",
+      "evidence_urls": "https://www.higgsfield.ai/pricing, https://mindcloud.co/docs/higgsfield-ai/, https://github.com/higgsfield-ai/higgsfield, https://www.higgsfield.ai/trust"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "",
+    "dom_confidence": "low"
+  },
+  {
+    "id": 98,
+    "name": "Mermaid CLI",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Developer Tools - A command-line interface for generating diagrams from text-based descriptions.",
+      "auth_methods": "N/A (CLI tool)",
+      "self_serve_vs_gated": "Self-serve (installable via npm, Docker, Homebrew)",
+      "api_surface": "CLI commands, Node.js API. No public REST/GraphQL API for diagram generation. An MCP server exists for validation/rendering.",
+      "buildability_verdict": "Yes, can be used as an agent toolkit. It's a CLI tool and can be invoked programmatically via Node.js API or subprocesses.",
+      "evidence_urls": "https://github.com/mermaid-js/mermaid-cli, https://mermaid.js.org/intro/, https://www.npmjs.com/package/@mermaid-js/mermaid-cli, https://github.com/mermaid-js/mermaid-cli/blob/main/docs/api-usage.md"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Unknown",
+    "dom_self_serve_evidence": "",
+    "dom_auth": {},
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://github.com/mermaid-js/mermaid-cli/blob/main/docs/api-usage.md",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 99,
+    "name": "YouTube Transcript",
+    "in_composio": true,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "Category: Media & Entertainment / Data Access. Description: The YouTube Data API allows developers to access and manage YouTube data, including searching for videos, retrieving metadata, managing playlists, and interacting with comments. It can also be used to extract video transcripts.",
+      "auth_methods": "API Key and OAuth 2.0.",
+      "self_serve_vs_gated": "Self-serve. Developers can obtain an API key for free from the Google Cloud Console. While there are daily quota limits (10,000 units per project), there is no direct cost or paid plan required for basic access. Quota increases can be requested.",
+      "api_surface": "Yes, there is a documented REST API. There is no indication of a GraphQL API. There are existing Model Context Protocol (MCP) servers for YouTube, such as the YouTube MCP Server, which allow AI language models to interact with YouTube content.",
+      "buildability_verdict": "Yes, this could be an agent toolkit today. The main blocker is that the official YouTube Data API v3 has limitations regarding transcript access, specifically only providing access to manual captions and not auto-generated ones, which are available for a much larger number of videos. Dedicated transcript APIs or MCP servers often bridge this gap.",
+      "evidence_urls": "https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started, https://developers.google.com/youtube/v3/getting-started"
+    },
+    "composio_baseline": {
+      "auth_methods": "OAUTH2",
+      "self_serve_vs_gated": "Self-serve via Composio Managed Auth",
+      "api_surface": "MCP: No"
+    },
+    "dom_self_serve": "Gated",
+    "dom_self_serve_evidence": "Signal: 'contact us'",
+    "dom_auth": {
+      "OAuth2": "oauth 2.0",
+      "API_Key": "api key"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.google.com/youtube/v3/getting-started",
+    "dom_confidence": "high"
+  },
+  {
+    "id": 100,
+    "name": "Grain",
+    "in_composio": false,
+    "source": "Gemini Web Research",
+    "gemini_data": {
+      "category_and_description": "AI-powered meeting notetaker and conversation intelligence platform that records video calls, Slack huddles, and in-person meetings to provide summaries, insights, and coaching feedback.",
+      "auth_methods": "OAuth2, Personal Access Token (PAT), Workspace Access Token (WAT), JWT, API Key (Secret Key)",
+      "self_serve_vs_gated": "Free plan available with limitations; paid plans and API access start at the Starter tier ($15/month per user), with full API capabilities and Workspace Access Tokens available on Business and Enterprise plans. Sales call required for Enterprise pricing.",
+      "api_surface": "REST API. Supports reading meeting data, managing recordings, uploading external recordings, and receiving real-time events via webhooks. An MCP server exists for AI agent integrations.",
+      "buildability_verdict": "Yes, it can be an agent toolkit today. The API provides access to meeting data, transcripts, and AI notes, and the MCP server facilitates AI agent integrations.",
+      "evidence_urls": "https://grain.com/pricing, https://developers.grain.com/, https://grain.com/security, https://grain.com/business"
+    },
+    "composio_baseline": null,
+    "dom_self_serve": "Self-serve (with paid tiers)",
+    "dom_self_serve_evidence": "Free: 'free trial' | Also: 'book a demo'",
+    "dom_auth": {
+      "OAuth2": "oauth2",
+      "API_Key": "bearer token"
+    },
+    "dom_is_graphql": false,
+    "dom_has_mcp": false,
+    "dom_docs_url_verified": "https://developers.grain.com/",
+    "dom_confidence": "high"
+  }
+]
